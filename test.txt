@@ -1,0 +1,5 @@
+https://www.milesweb.in/hosting-faqs/learn-to-set-up-access-to-private-repositories-using-git/ 
+First you will have to create the key and then  manage the authentication, add the key in your git account
+run the below command
+ssh -T git@github.com  
+if the connection is successfull, you will able to connect to git

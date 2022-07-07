@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="Description" content="Enter your description here"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+<link rel="stylesheet" href="/css/display.css">
+<link rel="icon" href="/img/flogo.png">
+
+<title>Checkout | Event Registration</title>
+</head>
+<body>
+{{!-- <hr/>
+
+    <table>
+        <tr>
+            <th>Event Name</th>
+            <th>Registration Amount</th>
+        </tr>
+    {{#each events}}
+             <tr>
+                <td>{{this.eventname}}</td>
+                <td>{{this.eventmoney}}</td>
+            </tr>
+    {{/each}}
+    </table>
+    <br/>
+    <h3>Total Amount    : {{registrationamount}}</h3><br/>
+    <br/> --}}
+
+    <div class="outercontainer">
+
+        <section class="semiCircle"><a onclick="window.history.go(-1)"><i class="fa fa-arrow-circle-left" aria-hidden="true"></i></a>
+            <section class='curved designer'></section>
+        </section>
+    </div>
+
+<div class="container-fluid">
+
+    <div class="inner-container mx-auto">
+
+             {{#if errormessage}}
+                 <div id="error" >
+                     <h6 class="alert alert-danger mt-4">{{errormessage}}</h6>
+                 </div>
+
+             {{/if}}
+
+
+        <div class="row mx-auto text-center">
+            <div class="col-12  p-1 mb-5 bg-warning mx-auto" style = 'border-radius:10px;'>
+            <h4>REGISTERED EVENTS</h4>
+            </div>
+        </div>
+        <table class="table table-dark table-striped table-bordered table-hover mt-2">
+            
+            <thead>
+                <tr class = 'bg-warning'>
+                    <th>Sno</th>
+                    <th>Event name</th>
+                    <th>Reg amount</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each events}}
+                <tr>
+                    <td scope="row">#</td>
+                    <td>{{this.eventname}}</td>
+                    <td>{{this.eventmoney}}</td>
+                </tr>
+                {{/each}}
+                <tr>
+                    <td scope="row">#</td>
+                    <td>RAZOR PAY FEE</td>
+                    <td>{{fee}}</td>
+                </tr>
+            </tbody>
+        </table>
+
+            {{#if message}}
+                 <div id="error" >
+                     <h6 class="alert alert-success mt-4">{{message}}</h6>
+                 </div>
+             {{/if}}
+        <div class="card-deck mt-5">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">Total Amount: <span> {{registrationamount}}</span></h4>
+                </div>
+            </div>
+          
+        </div>
+
+        <div class="card-deck mt-5">
+            <div class="card">
+                <div class="card-body" style = 'display:flex; justify-content: flex-end;'>
+
+                    <button class = 'btn btn-warning' id="rzp-button1">Checkout</button>
+                </div>
+            </div>
+
+            {{#if errormessage}}
+                <script>
+                     btn = document.getElementById('rzp-button1');
+                     btn.innerHTML = "Message Administrator";
+                     btn.setAttribute('onclick', "window.location.href='google.com'") 
+                     btn.setAttribute('id', 'nextstep');
+                 </script>
+            {{/if}}
+          
+        </div>
+    </div>
+</div>
+<section class='curved' style = 'margin-bottom:0;width:100%;'>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 offset-lg-3">
+
+                <div class="socialmedialinks">
+
+                    <div class="social-media-links"><a class="social-media-link social-media-link--facebook"
+                            href="#"><i class="fab fa-facebook-f"></i></a>
+
+                        <a class="social-media-link social-media-link--instagram" href="#"><i
+                                class="fab fa-instagram"></i></a>
+
+                        <a class="social-media-link social-media-link--youtube" href="#"><i
+                                class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+
+{{!-- <button >CHeckout</button> --}}
+<div id=paymentDetails></div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+<script>
+document.getElementById('rzp-button1').onclick = function(e){
+        $.post('/userdashboard/eventpayment').then((orderinfo) => {
+            console.log(orderinfo);
+                  
+     var options = {
+    "key": orderinfo[0].key,  //Enter your razorpay key
+    "currency": "INR",
+    "name": "ISTE TKMCE",
+    "description": orderinfo[0].name,
+    "image": "http://istetkmce.in/images/GEARFINAL.png",
+    "order_id":  orderinfo[0].id ,
+    "callback_url": "/userdashboard/eventafterpayment",
+    "theme": {
+        "color": "#fea500"
+    }
+};
+    var rzp1 = new Razorpay(options);
+    rzp1.open(); 
+    e.preventDefault();
+     });
+}
+</script>
+
+<footer>
+        <p>Copyright &copy; 404 ISTE.</p>
+    </footer>
+</section>
+
+
+{{!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js"></script> --}}
+</body>
+</html>

@@ -1,0 +1,340 @@
+:root{
+  --mainClr: black;
+  --subClr: orange;
+  --subClr2: white;
+  --facebook: #3b5999;
+  --youtube: #FF0000;
+  --instagram: #e4405f;
+
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+.semiCircle {
+    position: relative;
+    background: #04080c;
+    height: 20vh;
+    margin-bottom:100px;
+  }
+
+  body{
+    background-color:black;
+  }
+ 
+  .semiCircle::before {
+    position: absolute;
+    content: '';
+    left: 50%;
+    z-index: 100;
+    width: 123px;
+    height: 123px;
+    border-radius: 50%;
+    background:url(./logo.png);
+    background-size:cover;
+    background-position:center;
+background-color:#fff;
+    transform: translateX(-50%) translateY(50%);
+    bottom: 0px;
+  }
+
+
+
+
+.curved {
+  margin-top:60px;
+  position: relative;
+  background:orange;
+  height: 30vh;
+  border-bottom-left-radius: 50% 20%;
+  border-bottom-right-radius: 50% 20%;
+}
+
+.designer{
+ height:100%;
+ margin-top:0;
+}
+
+
+.socialmedialinks{
+  margin-top:-60px;
+}
+.socialmedialinks a{
+  text-decoration:none;
+  color:white;
+}
+
+
+.social-media-link--facebook:before {
+background-image: linear-gradient(45deg, #000 0%, #000 49%, var(--facebook) 50%);
+}
+
+
+
+.social-media-link--instagram:before {
+background-image: linear-gradient(45deg, #000 0%, #000 49%, var(--instagram) 50%);
+}
+
+
+
+.social-media-link--youtube:before {
+background-image: linear-gradient(45deg, #000 0%, #000 49%, var(--youtube) 50%);
+}
+
+.social-media-links {
+display: flex;
+width: 100%;
+justify-content: center;
+margin-top: 100px;
+}
+
+.social-media-link {
+width: 45px;
+height: 45px;
+display: flex;
+align-items: center;
+justify-content: center;
+text-decoration: none;
+color: #fff;
+font-size: 20px;
+position: relative;
+transition: transform 0.5s ease-in-out;
+border-radius:50%;
+}
+.social-media-link > i {
+z-index: 1;
+}
+.social-media-link:before {
+border-radius:50%;
+width: 45px;
+height: 45px;
+content: "";
+position: absolute;
+background-size: 300%;
+background-position: 0% 0%;
+transition: background-position 0.55s cubic-bezier(0.79, 0.14, 0.15, 0.86);
+}
+.social-media-link:hover, .social-media-link:active, .social-media-link:focus {
+transform: translateY(-1px);
+padding-bottom: 10px;
+}
+.social-media-link:hover:before, .social-media-link:active:before, .social-media-link:focus:before {
+background-position: top right;
+}
+.social-media-link + .social-media-link {
+margin-left: 4px;
+
+}
+
+.semiCircle a{
+  color:var(--mainClr);
+}
+.semiCircle i{
+  position:absolute;
+  z-index:5;
+  font-size:35px;
+  margin-left:15px;
+  margin-top:15px;
+  background-color:transparent;
+  color:var(--mainClr);
+}
+
+
+footer {
+  position:absolute;
+  width:100%;
+background:black;
+color: #868c96;
+margin-top:20px;
+border-radius: 25% 23% 10% 10% / 89% 89% 10% 10% ;
+}
+
+footer p {
+padding: 20px 0;
+text-align: center;
+}
+
+
+@media only screen and (min-height:1024px){
+  .curved{
+    height:10vh;
+  }
+
+  .semiCircle{
+    height:10vh;
+  }
+}
+@media only screen and (max-width:600px)
+{
+  .curved{
+    height:21vh;
+  }
+}
+/* dont delete this part its from the events html */
+/* <div class="swiper-container mt-5">
+<div class="swiper-wrapper">
+    <div class="swiper-slide">
+
+        <figure class="imghvr-zoom-out-flip-vert" style = 'background-color: orange;'>
+            <img src="img/poster.jpg" class='img-fluid img-responsive ' alt="example-image">
+            <figcaption style = 'background-color:orange;'>
+                <h3 class="ih-fade-down ih-delay-sm ">Oscar Wilde</h3>
+                <p class="ih-zoom-in ih-delay-md">
+                    <i>"I have the simplest tastes, I am always satisfied with the best."</i>
+                </p>
+            </figcaption>
+        </figure>
+   
+
+    </div>
+    <div class="swiper-slide">
+
+        <figure class="imghvr-zoom-out-flip-vert" style = 'background-color: orange;'>
+            <img src="img/poster.jpg" class='img-fluid img-responsive ' alt="example-image">
+            <figcaption style = 'background-color:orange;'>
+                <h3 class="ih-fade-down ih-delay-sm ">Oscar Wilde</h3>
+                <p class="ih-zoom-in ih-delay-md">
+                    <i>"I have the simplest tastes, I am always satisfied with the best."</i>
+                </p>
+            </figcaption>
+        </figure>
+
+
+
+    </div>
+
+
+    <div class="swiper-slide">
+
+        <figure class="imghvr-zoom-out-flip-vert" style = 'background-color: orange;'>
+            <img src="img/poster.jpg" class='img-fluid img-responsive ' alt="example-image">
+            <figcaption style = 'background-color:orange;'>
+                <h3 class="ih-fade-down ih-delay-sm ">Oscar Wilde</h3>
+                <p class="ih-zoom-in ih-delay-md">
+                    <i>"I have the simplest tastes, I am always satisfied with the best."</i>
+                </p>
+            </figcaption>
+        </figure>
+
+
+
+    </div>
+</div>
+<!-- Add Pagination -->
+<div class="swiper-pagination"></div>
+</div>
+
+
+<div class="swiper-container mt-5">
+<div class="swiper-wrapper">
+    <div class="swiper-slide">
+
+        <figure class="imghvr-zoom-out-flip-vert" style = 'background-color: orange;'>
+            <img src="img/poster.jpg" class='img-fluid img-responsive ' alt="example-image">
+            <figcaption style = 'background-color:orange;'>
+                <h3 class="ih-fade-down ih-delay-sm ">Oscar Wilde</h3>
+                <p class="ih-zoom-in ih-delay-md">
+                    <i>"I have the simplest tastes, I am always satisfied with the best."</i>
+                </p>
+            </figcaption>
+        </figure>
+
+
+
+    </div>
+    <div class="swiper-slide">
+
+        <figure class="imghvr-zoom-out-flip-vert" style = 'background-color: orange;'>
+            <img src="img/poster.jpg" class='img-fluid img-responsive ' alt="example-image">
+            <figcaption style = 'background-color:orange;'>
+                <h3 class="ih-fade-down ih-delay-sm ">Oscar Wilde</h3>
+                <p class="ih-zoom-in ih-delay-md">
+                    <i>"I have the simplest tastes, I am always satisfied with the best."</i>
+                </p>
+            </figcaption>
+        </figure>
+
+
+
+    </div>
+
+
+    <div class="swiper-slide">
+
+        <figure class="imghvr-zoom-out-flip-vert" style = 'background-color: orange;'>
+            <img src="img/poster.jpg" class='img-fluid img-responsive ' alt="example-image">
+            <figcaption style = 'background-color:orange;'>
+                <h3 class="ih-fade-down ih-delay-sm ">Oscar Wilde</h3>
+                <p class="ih-zoom-in ih-delay-md">
+                    <i>"I have the simplest tastes, I am always satisfied with the best."</i>
+                </p>
+            </figcaption>
+        </figure>
+
+
+
+    </div>
+</div>
+<!-- Add Pagination -->
+<div class="swiper-pagination"></div>
+</div>
+
+
+
+
+<div class="swiper-container mt-5">
+<div class="swiper-wrapper">
+    <div class="swiper-slide">
+
+        <figure class="imghvr-zoom-out-flip-vert" style = 'background-color: orange;'>
+            <img src="img/poster.jpg" class='img-fluid img-responsive ' alt="example-image">
+            <figcaption style = 'background-color:orange;'>
+                <h3 class="ih-fade-down ih-delay-sm ">Oscar Wilde</h3>
+                <p class="ih-zoom-in ih-delay-md">
+                    <i>"I have the simplest tastes, I am always satisfied with the best."</i>
+                </p>
+            </figcaption>
+        </figure>
+
+
+
+    </div>
+    <div class="swiper-slide">
+
+        <figure class="imghvr-zoom-out-flip-vert" style = 'background-color: orange;'>
+            <img src="img/poster.jpg" class='img-fluid img-responsive ' alt="example-image">
+            <figcaption style = 'background-color:orange;'>
+                <h3 class="ih-fade-down ih-delay-sm ">Oscar Wilde</h3>
+                <p class="ih-zoom-in ih-delay-md">
+                    <i>"I have the simplest tastes, I am always satisfied with the best."</i>
+                </p>
+            </figcaption>
+        </figure>
+
+
+
+    </div>
+
+
+    <div class="swiper-slide">
+
+        <figure class="imghvr-zoom-out-flip-vert" style = 'background-color: orange;'>
+            <img src="img/poster.jpg" class='img-fluid img-responsive ' alt="example-image">
+            <figcaption style = 'background-color:orange;'>
+                <h3 class="ih-fade-down ih-delay-sm ">Oscar Wilde</h3>
+                <p class="ih-zoom-in ih-delay-md">
+                    <i>"I have the simplest tastes, I am always satisfied with the best."</i>
+                </p>
+            </figcaption>
+        </figure>
+
+
+
+    </div>
+</div>
+<!-- Add Pagination -->
+<div class="swiper-pagination"></div>
+</div> */

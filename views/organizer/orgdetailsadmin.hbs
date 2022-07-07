@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Dashboard | Registration ATHENA21</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="all,follow">
+    <!-- Bootstrap CSS-->
+    <link rel="stylesheet" href="/vendor/bootstrap/css/bootstrap.min.css">
+    <!-- Font Awesome CSS-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <!-- Google fonts - Popppins for copy-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,800">
+    <!-- orion icons-->
+    <link rel="stylesheet" href="/css/orionicons.css">
+    <!-- theme stylesheet-->
+    <link rel="stylesheet" href="/css/style.default.css" id="theme-stylesheet">
+    <!-- Custom stylesheet - for your changes-->
+    <link rel="stylesheet" href="/css/custom.css">
+    <link rel="stylesheet" href="/css/themechange.css">
+    <!-- Favicon-->
+      <link rel="icon" href="/img/flogo.png">
+
+     <style>
+        .exploreRegister .card:hover, .exploreRegister .card:focus{
+            background-color:orange;
+            border:1px solid black;
+
+        }
+        .regmail:hover{
+            cursor: pointer;
+        }
+    </style>
+    <!-- Tweaks for older IEs--><!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
+  </head>
+ <body>
+    <!-- navbar-->
+    <header class="header">
+        <nav class="navbar navbar-expand-lg px-4 py-2 bg-white shadow" id="navbar"><a href="#"
+                class="sidebar-toggler text-black-500 mr-4 mr-lg-5 lead"><i class="fas fa-align-left"></i></a><a href="#"
+                class="navbar-brand font-weight-bold text-uppercase text-base" id="navbarhd" style="color: #000;margin-right: 64px;">{{user}} Dashboard</a>
+                <div class="toggle">
+                    <input type="checkbox" id="toggle" />
+                    <label for="toggle"></label>
+                </div>
+            <ul class="ml-auto d-flex align-items-center list-unstyled mb-0">
+                <!-- <li class="nav-item">
+            <form id="searchForm" class="ml-auto d-none d-lg-block">
+              <div class="form-group position-relative mb-0">
+                <button type="submit" style="top: -3px; left: 0;" class="position-absolute bg-white border-0 p-0"><i class="o-search-magnify-1 text-gray text-lg"></i></button>
+                <input type="search" placeholder="Search ..." class="form-control form-control-sm border-0 no-shadow pl-4">
+              </div>
+            </form>
+          </li> -->
+                <li class="nav-item dropdown mr-3"><a id="notifications" href="#" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false"
+                        class="nav-link dropdown-toggle text-gray-400 px-1"><i class="fa fa-bell"></i><span
+                            class="notification-icon"></span></a>
+                    <div aria-labelledby="notifications" class="dropdown-menu"><a href="#" class="dropdown-item">
+                            <div class="d-flex align-items-center">
+                                <!-- <div class="icon icon-sm bg-violet text-white"><i class="fab fa-twitter"></i></div> -->
+                                <div class="text ml-2">
+                                    <p class="mb-0">New notifications</p>
+                                </div>
+                            </div>
+                        </a>
+
+                        <div class="dropdown-divider"></div><a href="#" class="dropdown-item text-center"><small
+                                class="font-weight-bold headings-font-family text-uppercase">View all
+                                notifications</small></a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown ml-auto"><a id="userInfo" href="http://example.com" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false" class="nav-link dropdown-toggle"><img
+                            src="img/avatar-6.jpg" alt="{{name}}" style="max-width: 2.5rem;"
+                            class="img-fluid rounded-circle shadow"></a>
+                    <div aria-labelledby="userInfo" class="dropdown-menu"><a href="#" class="dropdown-item"><strong
+                                class="d-block text-uppercase headings-font-family">{{name}}</strong><small>{{user}}</small></a>
+                        <!-- <div class="dropdown-divider"></div><a href="#" class="dropdown-item">Settings</a><a href="#" class="dropdown-item">Activity log       </a> -->
+                        <div class="dropdown-divider"></div><a href="/admin/logout" class="dropdown-item">Logout</a>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <div class="d-flex align-items-stretch">
+        <div id="sidebar" class="sidebar py-3">
+            <div class="text-black-400 text-uppercase px-3 px-lg-4 py-4 font-weight-bold small headings-font-family">MAIN
+            </div>
+            <ul class="sidebar-menu list-unstyled">
+                <li class="sidebar-list-item"><a href="/admindashboard" class="sidebar-link text-muted"><i
+                            id="menuicon1" class="o-home-1 mr-3 text-black"></i><span id="span1" style="color: #000">Dashboard</span></a></li>
+                <!-- <li class="sidebar-list-item"><a href="charts.html" class="sidebar-link text-muted"><i class="o-sales-up-1 mr-3 text-black"></i><span>Charts</span></a></li> -->
+                <li class="sidebar-list-item"><a href="/admindashboard/registrations" onclick=""
+                        class="sidebar-link text-muted"><i
+                            class="o-table-content-1 mr-3 text-black" id="menuicon2"></i><span id="span2" style="color: #000">Registrations</span></a></li>
+                <li class="sidebar-list-item"><a href="/home" class="sidebar-link text-muted"><i
+                            id="menuicon1" class="fa fa-arrow-left mr-3 text-black"></i><span id="span1" style="color: #000">Back to Main</span></a></li>
+                
+                <!-- <li class="sidebar-list-item"><a href="forms.html" class="sidebar-link text-muted active"><i class="o-survey-1 mr-3 text-gray"></i><span>Forms</span></a></li> -->
+                <!-- <li class="sidebar-list-item"><a href="#" data-toggle="collapse" data-target="#pages" aria-expanded="false" aria-controls="pages" class="sidebar-link text-muted"><i class="o-wireframe-1 mr-3 text-gray"></i><span>Pages</span></a>
+            <div id="pages" class="collapse">
+              <ul class="sidebar-menu list-unstyled border-left border-warning border-thick">
+                <li class="sidebar-list-item"><a href="#" class="sidebar-link text-muted pl-lg-5">Page one</a></li>
+                <li class="sidebar-list-item"><a href="#" class="sidebar-link text-muted pl-lg-5">Page two</a></li>
+                <li class="sidebar-list-item"><a href="#" class="sidebar-link text-muted pl-lg-5">Page three</a></li>
+                <li class="sidebar-list-item"><a href="#" class="sidebar-link text-muted pl-lg-5">Page four</a></li>
+              </ul>
+            </div>
+          </li>
+              <li class="sidebar-list-item"><a href="login.html" class="sidebar-link text-muted"><i class="o-exit-1 mr-3 text-gray"></i><span>Login</span></a></li> -->
+            </ul>
+            <div class="text-black-400 text-uppercase px-3 px-lg-4 py-4 font-weight-bold small headings-font-family">
+                EXTRAS</div>
+            <ul class="sidebar-menu list-unstyled">
+                
+                {{#if regbutton}}
+                 <li class="sidebar-list-item regmail" id="regmail"><a  class="sidebar-link text-muted" onclick="sendregmail()"><i class="o-database-1 mr-3 text-black"></i>Send Mail</a></li>
+                {{/if}}
+          <!--- <li class="sidebar-list-item"><a href="techteam.html" class="sidebar-link text-muted"><i class="o-database-1 mr-3 text-gray"></i><span>Tech Team</span></a></li> -->
+                <!-- <li class="sidebar-list-item"><a href="#" class="sidebar-link text-muted"><i class="o-imac-screen-1 mr-3 text-gray"></i><span>Demo</span></a></li>
+          <li class="sidebar-list-item"><a href="#" class="sidebar-link text-muted"><i class="o-paperwork-1 mr-3 text-gray"></i><span>Demo</span></a></li>
+          <li class="sidebar-list-item"><a href="#" class="sidebar-link text-muted"><i class="o-wireframe-1 mr-3 text-gray"></i><span>Demo</span></a></li> -->
+            </ul>
+        </div>
+        <div class="page-holder w-100 d-flex flex-wrap">
+            <div class="container-fluid px-xl-5" id="dashbg">
+                <section class="py-5">
+                    <div class="col-lg-12 " style="border: 4px solid #fea500;padding: 0;border-radius: 19px 19px 0 0;" id="dashcardbrdr">
+                        <div class="card">
+                            <div class="card-header" >
+                                <!-- <nav class="nav nav-pills flex-column flex-sm-row">
+                      <a class="flex-sm-fill text-sm-center nav-link active" aria-current="page" href="#create" onclick="creEvent()">Create</a>
+                      <a class="flex-sm-fill text-sm-center nav-link active" aria-current="page" href="#update" onclick="updateEvent()">Update</a>
+                      <a class="flex-sm-fill text-sm-center nav-link active" aria-current="page" href="#notify" onclick="notifyEvent()">Notify</a>
+                    </nav> -->
+                            </div>
+                            <div class="card-body" id="dashcard">
+                                <div class="form pl-0">
+                                    <div class="tab-content">
+                                        <div id="update" >
+
+                                            <h1 id="reghd" style="text-align: center; border-bottom: 2px solid #ef9b00;padding-bottom: 10px; ">{{head}}</h1>
+                                            <p id="extracteventname" style="display:none">{{registrations.0.eventName1}}</p>
+                                                {{#each registrations}}
+                                                    
+                                                  <div id = "regdiv" class="row col-lg-12" style="border: 2px solid; border-radius: 20px; margin: 8px 0px 8px 0px;">
+                    <div class="col-lg-3 d-flex align-items-center flex-column flex-lg-row text-center text-md-left ">
+                      <h6 class="mb-0 ">{{this.name}}</h6>
+                    </div>
+                    <div class="col-lg-8 d-flex align-items-center flex-column flex-lg-row text-center text-md-left">
+                      <div class="col-md-3 reg"  >
+                      {{this.email}}
+                      </div>
+                      <div class="col-lg-3 d-flex align-items-center flex-column flex-lg-row text-center text-md-left ">
+                      <a href="https://api.whatsapp.com/send?phone={{this.phNo}}&text=ASSIST%20ME?"><h6 class="mb-0 ">{{this.phNo}} </h6></a>
+                    </div>
+                    <div class="col-lg-3 d-flex align-items-center flex-column flex-lg-row text-center text-md-left "><button type="button" id="verify-{{this.id}}" class="btn btnverify btn-{{../btnclass}} ml-5  mt-3 mb-3">{{../btntext}}</button> </div>
+                    <div class="col-lg-3 d-flex align-items-center flex-column flex-lg-row text-center text-md-left "><button type="button" id="email-{{this.id}}"class="btn btnemail btn-{{../btn2class}} ml-5  mt-3 mb-3">{{../btn2text}}</button> </div>
+                    
+               
+                    </div>
+                                                    </div>
+
+                                                  {{/each}}
+                                            <form>
+                                                <div class="form-row" id="eventTable">
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                <textarea id="copyingText" style="display: none;"></textarea>
+                </section>
+
+            </div>
+            <footer class="footer bg-white shadow align-self-end py-3 px-xl-5 w-100" id="footer">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-6 text-center text-md-left text-warning">
+                            <p class="mb-2 mb-md-0">ISTE TKMCE &copy;</p>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+    <!-- JavaScript files-->
+    <script src="/vendor/jquery/jquery.min.js"></script>
+    <script src="/vendor/popper.js/umd/popper.min.js"> </script>
+    <script src="/vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/vendor/jquery.cookie/jquery.cookie.js"> </script>
+    <script src="/vendor/chart.js/Chart.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
+    <script src="/js/themechange.js"></script>
+    <script src="/js/front.js"></script>
+    <script>
+
+          
+    function filter() {
+            var verifybtn = JSON.parse(`{{{btndets}}}`);
+            var mailbtn = JSON.parse(`{{{btn2dets}}}`);
+
+           // console.log(verifybtn);
+           // var y = document.getElementById("filter").value;
+            var a = document.getElementsByClassName('btnverify');
+            var b = document.getElementsByClassName('btnemail');
+            //var z =  $('.reg').text();
+            //console.log(z);
+            //console.log(a);
+            //console.log(b);
+            
+             c = 0
+             Object.keys(a).forEach(function(className) 
+                {
+                    var btn1= a[className];
+                   
+                    btn1.className = `btn btnverify btn-${verifybtn[c].class} ml-5  mt-3 mb-3 `;
+                    btn1.innerHTML = `${verifybtn[c].text}`
+                    if(verifybtn[c].class == "danger"){
+                        tempbtnid = btn1.id;
+                        btnid = tempbtnid.split('-')[1]
+                        btn1.setAttribute( "onClick", `updateverification(${btnid})` );
+                    }
+                    else{
+                        btn1.disabled = true;
+                    }
+                    c++;
+                }) 
+        }
+       filter();
+
+    function newfilter(){
+        var b = document.getElementsByClassName('btnemail');
+        var mailbtn = JSON.parse(`{{{btn2dets}}}`);
+         c = 0
+                Object.keys(b).forEach(function(className) {
+                var btn2= b[className];
+                //console.log(btn2.className);
+                btn2.className = `btn btnemail btn-${mailbtn[c].class} ml-5  mt-3 mb-3`;
+                btn2.innerHTML = `${mailbtn[c].text}`
+               if(mailbtn[c].class == "danger"){
+                        tempbtnid = btn2.id;
+                        btnid = tempbtnid.split('-')[1]
+                        //console.log(btnid);
+                        btn2.setAttribute( "onClick", `updatemail(${btnid})` );
+                    }
+                    else{
+                        btn2.disabled = true;
+                    }
+                    c++;
+            }) 
+    }
+
+    newfilter();
+
+    function updateverification(id){
+            //alert("HI " + id)
+             $.post('/admindashboard/verifyreg',{id:id},function(data) {
+                //console.log(data);
+                changebtn = document.getElementById(`verify-${id}`)
+                //console.log(changebtn);
+                changebtn.innerHTML = `${data.text}`
+                changebtn.className = `btn btnverify btn-${data.class} ml-5  mt-3 mb-3`
+                changebtn.disabled = true;
+            },'json');
+    }
+    function updatemail(id){
+            //alert("HI " + id)
+             $.post('/admindashboard/verifymail',{id:id},function(data) {
+                //console.log(data);
+                changebtn = document.getElementById(`email-${id}`)
+                changebtn.innerHTML = `${data.text}`
+                changebtn.className = `btn btnemail btn-${data.class} ml-5  mt-3 mb-3`
+                changebtn.disabled = true;
+            },'json');
+    }
+
+    eventname = document.getElementById("extracteventname").innerHTML;
+    //console.log(eventname);
+
+    function sendregmail(){
+            //alert("HI " + id)
+            eventname = document.getElementById("extracteventname").innerHTML;
+             $.post('/workshopemail',{event:eventname},function() {
+                //console.log(data);
+                changebtn = document.getElementById('regmail')
+                console.log(changebtn);
+                alert("Mail sent successflly"); 
+                changebtn.style = "display:none"
+            //    changebtn.innerHTML = `${data.text}`
+             //   changebtn.className = `btn btnemail btn-${data.class} ml-5  mt-3 mb-3`
+           //     changebtn.disabled = true; 
+            },'json');
+    }
+     
+   
+
+    </script>
+</body>
+</html>

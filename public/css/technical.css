@@ -1,0 +1,27 @@
+.tf-container{
+    display: flex;
+    flex-direction: row;
+}
+
+.tf-item{
+    width: 33%;
+}
+
+
+@media (min-width: 1032px) {
+  .ele{
+      margin-left: 4rem;
+  }
+  .zoom:hover{
+    transform: scale(2);   
+}
+}
+
+.zoom{
+    transition: transform .09s;
+}
+
+.zoom:hover{
+    transform: scale(4);
+    border-radius: 1%;   
+}

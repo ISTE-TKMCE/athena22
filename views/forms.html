@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Form</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="all,follow">
+    <!-- Bootstrap CSS-->
+    <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
+    <!-- Font Awesome CSS-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <!-- Google fonts - Popppins for copy-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,800">
+    <!-- orion icons-->
+    <link rel="stylesheet" href="css/orionicons.css">
+    <!-- theme stylesheet-->
+    <link rel="stylesheet" href="css/style.default.css" id="theme-stylesheet">
+    <!-- Custom stylesheet - for your changes-->
+    <link rel="stylesheet" href="css/custom.css">
+    <!-- Favicon-->
+    <link rel="shortcut icon" href="img/favicon.png?3">
+    <!-- Tweaks for older IEs--><!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
+  </head>
+  <body>
+    <!-- navbar-->
+    <header class="header">
+      <nav class="navbar navbar-expand-lg px-4 py-2 bg-white shadow"><a href="#" class="sidebar-toggler text-gray-500 mr-4 mr-lg-5 lead"><i class="fas fa-align-left"></i></a><a href="index.html" class="navbar-brand font-weight-bold text-uppercase text-base">Organiser Dashboard</a>
+        <ul class="ml-auto d-flex align-items-center list-unstyled mb-0">
+          <!-- <li class="nav-item">
+            <form id="searchForm" class="ml-auto d-none d-lg-block">
+              <div class="form-group position-relative mb-0">
+                <button type="submit" style="top: -3px; left: 0;" class="position-absolute bg-white border-0 p-0"><i class="o-search-magnify-1 text-gray text-lg"></i></button>
+                <input type="search" placeholder="Search ..." class="form-control form-control-sm border-0 no-shadow pl-4">
+              </div>
+            </form>
+          </li> -->
+          <li class="nav-item dropdown mr-3"><a id="notifications" href="http://example.com" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link dropdown-toggle text-gray-400 px-1"><i class="fa fa-bell"></i><span class="notification-icon"></span></a>
+            <div aria-labelledby="notifications" class="dropdown-menu"><a href="#" class="dropdown-item">
+                <div class="d-flex align-items-center">
+                  <!-- <div class="icon icon-sm bg-violet text-white"><i class="fab fa-twitter"></i></div> -->
+                  <div class="text ml-2">
+                    <p class="mb-0">New notifications</p>
+                  </div>
+                </div></a>
+                <!-- <a href="#" class="dropdown-item"> 
+                <div class="d-flex align-items-center">
+                  <div class="icon icon-sm bg-green text-white"><i class="fas fa-envelope"></i></div>
+                  <div class="text ml-2">
+                    <p class="mb-0">You have 6 new messages</p>
+                  </div>
+                </div></a><a href="#" class="dropdown-item">
+                <div class="d-flex align-items-center">
+                  <div class="icon icon-sm bg-blue text-white"><i class="fas fa-upload"></i></div>
+                  <div class="text ml-2">
+                    <p class="mb-0">Server rebooted</p>
+                  </div>
+                </div></a><a href="#" class="dropdown-item">
+                <div class="d-flex align-items-center">
+                  <div class="icon icon-sm bg-violet text-white"><i class="fab fa-twitter"></i></div>
+                  <div class="text ml-2">
+                    <p class="mb-0">You have 2 followers</p>
+                  </div>
+                </div></a> -->
+              <div class="dropdown-divider"></div><a href="#" class="dropdown-item text-center"><small class="font-weight-bold headings-font-family text-uppercase">View all notifications</small></a>
+            </div>
+          </li>
+          <li class="nav-item dropdown ml-auto"><a id="userInfo" href="http://example.com" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link dropdown-toggle"><img src="img/avatar-6.jpg" alt="Jason Doe" style="max-width: 2.5rem;" class="img-fluid rounded-circle shadow"></a>
+            <div aria-labelledby="userInfo" class="dropdown-menu"><a href="#" class="dropdown-item"><strong class="d-block text-uppercase headings-font-family">Name</strong><small>Event Organiser</small></a>
+              <!-- <div class="dropdown-divider"></div><a href="#" class="dropdown-item">Settings</a><a href="#" class="dropdown-item">Activity log       </a> -->
+              <div class="dropdown-divider"></div><a href="login.html" class="dropdown-item">Logout</a>
+            </div>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <div class="d-flex align-items-stretch">
+      <div id="sidebar" class="sidebar py-3">
+        <div class="text-gray-400 text-uppercase px-3 px-lg-4 py-4 font-weight-bold small headings-font-family">MAIN</div>
+        <ul class="sidebar-menu list-unstyled">
+              <li class="sidebar-list-item"><a href="index.html" class="sidebar-link text-muted"><i class="o-home-1 mr-3 text-gray"></i><span>Home</span></a></li>
+              <!-- <li class="sidebar-list-item"><a href="charts.html" class="sidebar-link text-muted"><i class="o-sales-up-1 mr-3 text-gray"></i><span>Charts</span></a></li> -->
+              <li class="sidebar-list-item"><a href="tables.html" class="sidebar-link text-muted"><i class="o-table-content-1 mr-3 text-gray"></i><span>Events</span></a></li>
+              <li class="sidebar-list-item"><a href="forms.html" class="sidebar-link text-muted active"><i class="o-survey-1 mr-3 text-gray"></i><span>Forms</span></a></li>
+          <!-- <li class="sidebar-list-item"><a href="#" data-toggle="collapse" data-target="#pages" aria-expanded="false" aria-controls="pages" class="sidebar-link text-muted"><i class="o-wireframe-1 mr-3 text-gray"></i><span>Pages</span></a>
+            <div id="pages" class="collapse">
+              <ul class="sidebar-menu list-unstyled border-left border-primary border-thick">
+                <li class="sidebar-list-item"><a href="#" class="sidebar-link text-muted pl-lg-5">Page one</a></li>
+                <li class="sidebar-list-item"><a href="#" class="sidebar-link text-muted pl-lg-5">Page two</a></li>
+                <li class="sidebar-list-item"><a href="#" class="sidebar-link text-muted pl-lg-5">Page three</a></li>
+                <li class="sidebar-list-item"><a href="#" class="sidebar-link text-muted pl-lg-5">Page four</a></li>
+              </ul>
+            </div>
+          </li>
+              <li class="sidebar-list-item"><a href="login.html" class="sidebar-link text-muted"><i class="o-exit-1 mr-3 text-gray"></i><span>Login</span></a></li> -->
+        </ul>
+        <div class="text-gray-400 text-uppercase px-3 px-lg-4 py-4 font-weight-bold small headings-font-family">EXTRAS</div>
+        <ul class="sidebar-menu list-unstyled">
+          <li class="sidebar-list-item"><a href="volunteers.html" class="sidebar-link text-muted"><i class="o-database-1 mr-3 text-gray"></i><span>Volunteers</span></a></li>
+          <li class="sidebar-list-item"><a href="techteam.html" class="sidebar-link text-muted"><i class="o-database-1 mr-3 text-gray"></i><span>Tech Team</span></a></li>
+          <!-- <li class="sidebar-list-item"><a href="#" class="sidebar-link text-muted"><i class="o-imac-screen-1 mr-3 text-gray"></i><span>Demo</span></a></li>
+          <li class="sidebar-list-item"><a href="#" class="sidebar-link text-muted"><i class="o-paperwork-1 mr-3 text-gray"></i><span>Demo</span></a></li>
+          <li class="sidebar-list-item"><a href="#" class="sidebar-link text-muted"><i class="o-wireframe-1 mr-3 text-gray"></i><span>Demo</span></a></li> -->
+      </ul>
+      </div>
+      <div class="page-holder w-100 d-flex flex-wrap">
+        <div class="container-fluid px-xl-5">
+          <section class="py-5">
+              <div class="col-lg-12 mb-5">                           
+                <div class="card">
+                  <div class="card-header">
+                    <nav class="nav nav-pills flex-column flex-sm-row">
+                      <a class="flex-sm-fill text-sm-center nav-link active" aria-current="page" href="#create" onclick="creEvent()">Create</a>
+                      <a class="flex-sm-fill text-sm-center nav-link active" aria-current="page" href="#update" onclick="updateEvent()">Update</a>
+                      <a class="flex-sm-fill text-sm-center nav-link active" aria-current="page" href="#notify" onclick="notifyEvent()">Notify</a>
+                    </nav>
+                  </div>
+                  <div class="card-body">
+                    <div class="form pl-0">
+                      <div class="tab-content">
+                        <div id = "create" style="display: none;">
+                          <h1>Create New Event</h1>
+                          <form>
+                            <div class="form-row">
+                              <div class="form-group col-md-6">
+                                <label>Event Name</label>
+                                <input type="text" class="form-control" placeholder="Event Name">
+                              </div>
+                              <div class="form-group col-md-6">
+                                <label>Date</label>
+                                <input type="text" class="form-control" placeholder="DD/MM/YYYY">
+                              </div>
+                            </div>
+                            <div class="form-group">
+                              <label>Event Description</label>
+                              <input type="text" class="form-control" placeholder="Event Description">
+                            </div>
+                            <div class="form-group">
+                              <label>Other details</label>
+                              <input type="text" class="form-control" placeholder="Other Details">
+                            </div>
+                            <div class="form-group">
+                              <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="regCheck">
+                                <label class="form-check-label" for="regCheck">
+                                  Registration Required
+                                </label>
+                                <button type="submit" class="btn btn-primary" style="float: right;">Submit</button>
+                              </div>
+                            </div>
+                          </form>
+                        </div>
+                        <div id = "update" style="display: none;">
+                          <h1>Update Event Details</h1>
+                          <form>
+                            <div class="form-row" id="eventTable">
+                              <!-- <div class="form-group col-md-4">
+                                <label>Event Name</label>
+                                <input type="text" class="form-control" placeholder="Event Name">
+                              </div>
+                              <div class="form-group col-md-4">
+                                <label>Date</label>
+                                <input type="text" class="form-control" placeholder="DD/MM/YYYY">
+                              </div>
+                              <div class="col-md-4 mt-3">
+                                <button type="button" class="btn btn-primary ml-5 mt-2 dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="width: 105.35px !important;">Edit</button>
+                                <div class="dropdown-menu p-4">
+                                  <form>
+                                    <div class="form-row">
+                                      <div class="form-group col-md-6">
+                                        <label>Event Name</label>
+                                        <input type="text" class="form-control" placeholder="Event Name">
+                                      </div>
+                                      <div class="form-group col-md-6">
+                                        <label>Date</label>
+                                        <input type="text" class="form-control" placeholder="DD/MM/YYYY">
+                                      </div>
+                                    </div>
+                                    <div class="form-group">
+                                      <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="delayreason">
+                                        <label class="form-check-label" for="delayreason">
+                                          Delayed
+                                        </label>
+                                        <input type="text" class="form-control" placeholder="Reason for Delay">
+                                      </div>
+                                    </div>
+                                    <div class="form-group">
+                                      <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="otherreason">
+                                        <label class="form-check-label" for="otherreason">
+                                          Other changes
+                                        </label>
+                                        <input type="text" class="form-control" placeholder="Reason for changes">
+                                      </div>
+                                    </div>
+                                    <button type="submit" class="btn btn-primary" style="float: right;">Submit</button>
+                                  </form>
+                                </div>
+                                <button type="button" class="btn btn-danger ml-5 mt-2">Delete</button>
+                              </div>              -->
+                            </div>
+                          </form>
+                        </div>
+                      </div>
+                      <div id = "notify" style="display: none;">
+                        <h1>Any Issues?</h1>
+                        <form>
+                          <div class="form-row">
+                            <div class="form-group col-md-6">
+                              <label>Error</label>
+                              <input type="text" class="form-control" placeholder="What's your issue">
+                            </div>
+                            <div class="form-group col-md-6 my-auto">
+                              
+                              <div class="dropdown pt-2">
+                                <button class="btn btn-secondary dropdown-toggle" type="button" 
+                                id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                              <span id="showhere"> SELECT</span>
+                              </button>
+                              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                <li class="dropdown-item" id="content1" onclick="namechange1()">Voulnteer</a>
+                                <li class="dropdown-item" id="content2" onclick="namechange2()">Event Organiser</a>
+                                <li class="dropdown-item" id="content3" onclick="namechange3()">Finance Team</a>
+                                
+                              </div>
+                              </div>
+                
+                            </div>
+                            
+                            <!-- <div class="dropdown">
+                              <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Category
+                              </button>
+                              <div class="dropdown-menu">
+                                <select id="mySelect">
+                                  <option value="volunteer">Volunteer</option>
+                                  <option value="organiser">Event Organiser</option>
+                                  <option value="finance">Finance Team</option>
+                                </select>
+                              </div>
+                            </div> -->
+                          </div>
+                          <div class="form-group">
+                            <label>Error Description</label>
+                            <textarea class="form-control" placeholder="Error Description"></textarea>
+                          </div>
+                          
+                            <button type="submit" class="btn btn-primary float-right" >Submit</button>
+                          <br>
+                          
+                          <div class="form-group">
+                            <label>Error Description</label>
+                            <textarea class="form-control mt-1" placeholder="Error Description"></textarea>
+                          </div>
+                          <div class="form-group">
+                            <label for="exampleFormControlFile1">Upload Image</label>
+                            <input type="file" class="form-control-file" id="exampleFormControlFile1">
+                          </div>
+                        </form>
+                      </div>
+                    </div>
+          </section>
+        </div>
+        <footer class="footer bg-white shadow align-self-end py-3 px-xl-5 w-100">
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-md-6 text-center text-md-left text-primary">
+                <p class="mb-2 mb-md-0">ISTE TKMCE &copy;</p>
+              </div>
+            </div>
+          </div>
+        </footer>
+      </div>
+    </div>
+    <!-- JavaScript files-->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/popper.js/umd/popper.min.js"> </script>
+    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="vendor/jquery.cookie/jquery.cookie.js"> </script>
+    <script src="vendor/chart.js/Chart.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
+    <script src="js/front.js"></script>
+    <script>
+
+      let x = document.getElementById("create");
+      let y = document.getElementById("update");
+      let z = document.getElementById("notify");
+      function creEvent(){
+        if(x.style.display === "none"){
+          x.style.display = "block";
+          y.style.display = "none";
+          z.style.display = "none";
+        }
+        else{
+          x.style.display = "none";
+        }
+      }
+      function updateEvent(){
+        if(y.style.display === "none"){
+          y.style.display = "block";
+          z.style.display = "none";
+          x.style.display = "none";
+        }
+        else{
+          y.style.display = "none";
+        }
+      }
+      function notifyEvent(){
+        if(z.style.display === "none"){
+          z.style.display = "block";
+          y.style.display = "none";
+          x.style.display = "none";
+        }
+        else{
+          z.style.display = "none";
+        }
+      }
+      let events = [
+        {
+          name: "Event Name1",
+          date: "30/30/3000",
+          description: "Event Description",
+          others: "Other Description"
+        },
+        {
+          name: "Event Name2",
+          date: "30/30/3000",
+          description: "Event Description",
+          others: "Other Description"
+        },
+        {
+          name: "Event Name3",
+          date: "30/30/3000",
+          description: "Event Description",
+          others: "Other Description"
+        },{
+          name: "Event Name4",
+          date: "30/30/3000",
+          description: "Event Description",
+          others: "Other Description"
+        }
+      ];
+      function EventList(){
+        event = events.reduce((eventhtml,eve) =>{
+        eventhtml += `<div class="row col-lg-12">
+                    <div class="col-lg-4 d-flex align-items-center flex-column flex-lg-row text-center text-md-left ">
+                      <h6 class="mb-0 ">${eve.name}</h6>
+                    </div>
+                    <div class="col-lg-8 d-flex align-items-center flex-column flex-lg-row text-center text-md-left">
+                      <div class="col-md-4">
+                      ${eve.date}
+                      </div>
+                      <div class="col-md-8 mt-3">
+                                <button type="button" class="btn btn-primary ml-5 mr-5 mt-2 dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="width: 105.35px !important;">Edit</button>
+                                <div class="dropdown-menu p-4">
+                                  <form>
+                                    <div class="form-row">
+                                      <div class="form-group col-md-6">
+                                        <label>${eve.name}</label>
+                                      </div>
+                                      <div class="form-group col-md-6">
+                                        <label>${eve.date}</label>
+                                      </div>
+                                    </div>
+                                    <div class="form-group">
+                                      <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="delayreason">
+                                        <label class="form-check-label" for="delayreason">
+                                          Delayed
+                                        </label>
+                                        <input type="text" class="form-control" placeholder="Reason for Delay">
+                                      </div>
+                                    </div>
+                                    <div class="form-group">
+                                      <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="otherreason">
+                                        <label class="form-check-label" for="otherreason">
+                                          Other changes
+                                        </label>
+                                        <input type="text" class="form-control" placeholder="Reason for changes">
+                                      </div>
+                                    </div>
+                                    <button type="submit" class="btn btn-primary" style="float: right;">Submit</button>
+                                  </form>
+                                </div>
+                                <button type="button" class="btn btn-danger ml-5  mt-2">Delete</button>
+                              </div>
+                    </div>
+                  </div>`;
+        return eventhtml;
+      }, "");
+      eventsElement = document.getElementById("eventTable");
+      eventsElement.innerHTML = event;
+    };
+      EventList();
+
+      function namechange1(){
+        var name = document.getElementById("content1").innerHTML
+        console.log(name)
+        document.getElementById("showhere").innerHTML = name
+      }
+      function namechange2(){
+        var name = document.getElementById("content2").innerHTML
+        console.log(name)
+        document.getElementById("showhere").innerHTML = name
+      }function namechange3(){
+        var name = document.getElementById("content3").innerHTML
+        console.log(name)
+        document.getElementById("showhere").innerHTML = name
+      }
+      
+    </script>
+  </body>
+</html>
