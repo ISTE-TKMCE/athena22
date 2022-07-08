@@ -1,0 +1,296 @@
+
+:root{
+    --mnclr:#000000;
+    --mnclr2:#111111;
+    --clr:#1FA2FF;
+    --clr2:#12D8FA;
+    --card-height: 65vh;
+    --card-width: calc(var(--card-height) / 1.5);
+ }
+@font-face {
+    font-family: myFirstFont;
+    src: url(../font/robot1.ttf);
+  }
+
+  .containers{
+/* 
+    background: linear-gradient(90deg, var(--mnclr) 21px, transparent 1%) center, linear-gradient(var(--mnclr) 21px, transparent 1%) center, #a799cc;
+    background-size: 22px 22px; */
+  }
+.img-athena-blue{
+    margin-top:-90px;
+    height:300px;
+}
+h1{
+ font-family:myFirstFont;
+ color:var(--clr2);
+  font-size: 68px;
+  background: -webkit-linear-gradient(var(--clr), var(--clr2));
+  background-clip:text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+ 
+}
+body{
+    background:black !important;
+}
+
+.containers{
+    min-height:100vh;
+    width:100%;
+}
+#first-container{
+    display:flex;
+    justify-content:center;
+    align-items:center
+}
+         
+.btn {
+    background-image: linear-gradient(to right, var(--clr) 0%, var(--clr2) 51%, var(--clr)  100%);
+    margin: 10px;
+    padding: 15px 45px;
+    text-align: center;
+    text-transform: uppercase;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: white;            
+    box-shadow: 0 0 20px #eee;
+    border-radius: 10px;
+    display: block;
+  }
+
+  .btn:hover {
+    background-position: right center; /* change the direction of the change here */
+    color: #fff;
+    text-decoration: none;
+  }
+
+
+  .social-media-icons{
+    text-align:center;
+    margin-top:30px;
+  }
+ a img{
+    height:40px;
+    display:inline-block;
+    margin:0 auto;
+ }
+
+
+
+ .card{
+    background-color:var(--mnclr2);
+ }
+ #third-container h3{
+    font-size:34px;
+    font-family:myFirstFont;
+    color:var(--clr);
+    text-align: center;
+    position:relative;
+
+ }
+h3:before, h3:after{
+    content:'';
+    position:absolute;
+    height:1px;
+    background-color:var(--clr);
+    width:30%;
+    top:50%;
+    left:0;
+    transform:translateY(-50%);
+}
+h3:after{
+    left:100%;
+    transform: translateX(-100%);
+}
+.swiper {
+    width: 100%;
+    height: 100%;
+  }
+
+  .swiper-slide {
+    text-align: center;
+    height:300px;
+    font-size: 18px;
+    background: #fff;
+
+    /* Center slide text vertically */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+  }
+
+  .swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+
+  @property --rotate {
+    syntax: "<angle>";
+    initial-value: 132deg;
+    inherits: false;
+  }
+  .swiper-slide {
+    background: #191c29;
+    width: var(--card-width);
+    height: var(--card-height);
+    padding: 3px;
+    position: relative;
+    border-radius: 6px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    display: flex;
+    font-size: 1.5em;
+    color: rgb(88 199 250 / 0%);
+    cursor: pointer;
+    font-family: cursive;
+  
+  }
+  
+  .swiper-slide:hover {
+    color: rgb(88 199 250 / 100%);
+    transition: color 1s;
+  }
+  .swiper-slide:hover:before, .swiper-slide:hover:after {
+    animation: none;
+    opacity: 0;
+  }
+  
+  
+  .swiper-slide:before {
+    content: "";
+    width: 104%;
+    height: 102%;
+    border-radius: 8px;
+    background-image: linear-gradient(
+      var(--rotate)
+      , var(--clr), var(--clr2) 43%, var(--clr));
+      position: absolute;
+      z-index: -10;
+      top: -1%;
+      left: -2%;
+      animation: spin 2.5s linear infinite;
+  }
+  
+  .swiper-slide:after {
+    position: absolute;
+    content: "";
+    top: calc(var(--card-height) / 6);
+    left: 0;
+    right: 0;
+    z-index: -10;
+    height: 100%;
+    width: 100%;
+    margin: 0 auto;
+    transform: scale(0.8);
+    filter: blur(calc(var(--card-height) / 6));
+    background-image: linear-gradient(
+      var(--rotate)
+      , var(--clr), var(--clr2) 43%, var(--clr));
+      opacity: 1;
+    transition: opacity .5s;
+    animation: spin 2.5s linear infinite;
+  }
+  
+  @keyframes spin {
+    0% {
+      --rotate: 0deg;
+    }
+    100% {
+      --rotate: 360deg;
+    }
+  }
+  /* loading starts owl here */
+  .loading-screen {
+    background-color: #262626;
+    max-width: 100%;
+    height: 100vh;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+  }
+  .snippet {
+    padding: 50px;
+  }
+  .owl-animation {
+    display: flex;
+    justify-content: center;
+    width: 220px;
+    padding-bottom: 250px;
+  }
+  
+  .text {
+    color: #ffffff;
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+  }
+  
+  .stage {
+    display: flex;
+    justify-content: center;
+  }
+  .dot-flashing {
+    position: relative;
+    width: 10px;
+    height: 10px;
+    border-radius: 5px;
+    background-color: var(--clr);
+    color: var(--clr);
+    animation: dotFlashing 1s infinite linear alternate;
+    animation-delay: .5s;
+  }
+  
+  .dot-flashing::before, .dot-flashing::after {
+    content: '';
+    display: inline-block;
+    position: absolute;
+    top: 0;
+  }
+  
+  .dot-flashing::before {
+    left: -15px;
+    width: 10px;
+    height: 10px;
+    border-radius: 5px;
+    background-color: var(--clr);
+    color: var(--clr);
+    animation: dotFlashing 1s infinite alternate;
+    animation-delay: 0s;
+  }
+  
+  .dot-flashing::after {
+    left: 15px;
+    width: 10px;
+    height: 10px;
+    border-radius: 5px;
+    background-color: var(--clr);
+    color: var(--clr);
+    animation: dotFlashing 1s infinite alternate;
+    animation-delay: 1s;
+  }
+  
+  @keyframes dotFlashing {
+    0% {
+      background-color: var(--clr);
+    }
+    50%,
+    100% {
+      background-color: #A1C6FF;
+    }
+  }
+  
+ 
