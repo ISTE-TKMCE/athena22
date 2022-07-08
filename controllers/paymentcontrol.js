@@ -345,7 +345,7 @@ module.exports.paymentaftercontrol = async (req, res) => {
           //console.log(reusult);
           res.render("payerror", {
             errormessage:
-              "Payment Verification Failed. Contact Administrator to confirm your payment.",
+              "Payment Verification Failed. Contact Event Coordinator to confirm your payment.",
           });
         }
       }
