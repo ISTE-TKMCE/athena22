@@ -13,7 +13,7 @@ module.exports.registerevent = (req, res) => {
     event3,
     needpcbkit,
     isISTE,
-    ISTEregno,
+    ISTEregemail,
     couponcode1,
     couponcode2,
   } = req.body;
@@ -31,7 +31,7 @@ module.exports.registerevent = (req, res) => {
       eventName3: event3,
       needpcbkit: needpcbkit,
       isISTE: isISTE,
-      ISTEregno: ISTEregno,
+      ISTEregno: ISTEregemail,
       couponcode1: couponcode1,
       couponcode2: couponcode2,
       phNo: req.session.contact,
