@@ -648,17 +648,7 @@ transform:translateX(-50%);
 
 
 
-#moon {
-  display: block;
-  width: 900px;
-  opacity: 0.3;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, 19%);
-  z-index: -2;
-  /* display:none; */
-}
+
 .about-curved {
   position: absolute;
   /* background: var(--subClr); */
@@ -680,39 +670,12 @@ transform:translateX(-50%);
   border:2px solid var(--subClr);
   position:relative;
 }
-.roundedCard{
-  position:absolute;
-  height:140px;
-  width:140px;
-  resize:both;
-  border:2px solid var(--subClr);
-  border-radius:50%;
-  left:-5vmin;
-  top:50%;
-  transform:translate(0, -50%);
-  background-color:var(--mainClr);
-  animation: roundedCard 1s forwards 1s;
-}
 
 
 
 
-@keyframes roundedCard {
-  from{
-  left:50px;
 
-  }
-  to{
-    left:-126px;
-  }
-}
-.roundedCard img{
-  display:block;
-  position:absolute;
-  left:50%;
-  top:50%;
-  transform:translate(-50%, -50%);
-}
+
 #aheading,
 #eheading,#wheading {
   color: var(--subClr);
@@ -942,6 +905,10 @@ border: 1px solid rgba( 255, 255, 255, 0.18 );
   #navigation {
     z-index: 1;
   }
+ 
+  .swiper-slide{
+    height:300px;
+  }
 
   #events {
 
@@ -975,7 +942,8 @@ border: 1px solid rgba( 255, 255, 255, 0.18 );
 @media only screen and (max-width: 400px) {
 
   #events{
-    height:110vh;
+    min-height:80vh;
+    max-height:100vh;
   }
   #logo {
     height: 150px;
@@ -985,7 +953,7 @@ border: 1px solid rgba( 255, 255, 255, 0.18 );
   #hbox1 span {
     color: var(--subClr2);
     font-size: 70px;
-    font-family: "Times New Roman", Times, serif;
+    /* font-family: "Times New Roman", Times, serif; */
   }
   #hbox1 span:first-child,
   #hbox1 span:last-child {
@@ -997,7 +965,15 @@ border: 1px solid rgba( 255, 255, 255, 0.18 );
   }
 
  
-  
+  #festname span{
+    font-size:45px;
+    line-height: 85px;
+  }
+  #hbox1 span:first-child,
+#hbox1 span:last-child {
+  font-size: 55px;
+
+}
 
 
 
