@@ -8,9 +8,9 @@ const mg = mailgun({apiKey: process.env.MAILGUN_NAME, domain: process.env.MAILGU
 module.exports.otpmail =(email,otp,name) => {
     return new Promise((resolve, reject)=> {
         let data = {
-            from: 'noreply@athena21.live',
+            from: 'noreply@athenatkmce.live',
             to: email,
-            subject: 'Confirm OTP | Athena21',
+            subject: 'Confirm OTP | Athena22',
             template: "athena",
             'h:X-Mailgun-Variables': JSON.stringify({name: name, otp: otp, email: email})
         };
@@ -41,9 +41,9 @@ module.exports.workshopmail =(email,eventname) => {
     //console.log(link)
     return new Promise((resolve, reject)=> {
                 let data = {
-                    from: 'admin@athena21.tech',
+                    from: 'admin@athenatkmce.live',
                     to: email,
-                    subject: 'Join Link | Athena21',
+                    subject: 'Join Link | Athena22',
                     template: "Post",
                     'h:X-Mailgun-Variables': JSON.stringify({eventname:eventname, link: link, email: email})
                 };

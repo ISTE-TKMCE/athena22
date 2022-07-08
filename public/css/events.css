@@ -1,6 +1,6 @@
 :root{
   --mainClr: black;
-  --subClr: orange;
+  --subClr: #1FA2FF;
   --subClr2: white;
   --facebook: #3b5999;
   --youtube: #FF0000;
@@ -36,7 +36,7 @@
     background:url(./logo.png);
     background-size:cover;
     background-position:center;
-background-color:#fff;
+background-color:transparent;
     transform: translateX(-50%) translateY(50%);
     bottom: 0px;
   }
@@ -47,10 +47,10 @@ background-color:#fff;
 .curved {
   margin-top:60px;
   position: relative;
-  background:orange;
+  background:#1FA2FF;
   height: 30vh;
-  border-bottom-left-radius: 50% 20%;
-  border-bottom-right-radius: 50% 20%;
+  /* border-bottom-left-radius: 50% 20%;
+  border-bottom-right-radius: 50% 20%; */
 }
 
 .designer{
@@ -149,7 +149,7 @@ footer {
 background:black;
 color: #868c96;
 margin-top:20px;
-border-radius: 25% 23% 10% 10% / 89% 89% 10% 10% ;
+/* border-radius: 25% 23% 10% 10% / 89% 89% 10% 10% ; */
 }
 
 footer p {
@@ -172,6 +172,7 @@ text-align: center;
   .curved{
     height:21vh;
   }
+ 
 }
 /* dont delete this part its from the events html */
 /* <div class="swiper-container mt-5">

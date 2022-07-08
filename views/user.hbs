@@ -25,7 +25,7 @@
 
      <style>
         .exploreRegister .card:hover, .exploreRegister .card:focus{
-            background-color:orange;
+            background: linear-gradient(to right, #1FA2FF 0%, #12D8FA  51%, #1FA2FF  100%);
             border:1px solid black;
 
         }
@@ -40,10 +40,10 @@
         <nav class="navbar navbar-expand-lg px-4 py-2 bg-white shadow" id="navbar"><a href="#"
                 class="sidebar-toggler text-black-500 mr-4 mr-lg-5 lead"><i class="fas fa-align-left"></i></a><a href="#"
                 class="navbar-brand font-weight-bold text-uppercase text-base" id="navbarhd" style="color: #000;margin-right: 64px;">User Dashboard</a>
-                <div class="toggle">
+                {{!-- <div class="toggle">
                     <input type="checkbox" id="toggle" />
                     <label for="toggle"></label>
-                </div>
+                </div> --}}
             <ul class="ml-auto d-flex align-items-center list-unstyled mb-0">
                 <!-- <li class="nav-item">
             <form id="searchForm" class="ml-auto d-none d-lg-block">
@@ -72,9 +72,11 @@
                     </div>
                 </li>
                 <li class="nav-item dropdown ml-auto"><a id="userInfo" href="http://example.com" data-toggle="dropdown"
-                        aria-haspopup="true" aria-expanded="false" class="nav-link dropdown-toggle"><img
-                            src="img/avatar-6.jpg" alt="{{name}}" style="max-width: 2.5rem;"
-                            class="img-fluid rounded-circle shadow"></a>
+                        aria-haspopup="true" aria-expanded="false" class="nav-link dropdown-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
+                          <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+                        </svg>
+                        </a>
                     <div aria-labelledby="userInfo" class="dropdown-menu"><a href="#" class="dropdown-item"><strong
                                 class="d-block text-uppercase headings-font-family">{{name}}</strong><small>{{user}}</small></a>
                         <!-- <div class="dropdown-divider"></div><a href="#" class="dropdown-item">Settings</a><a href="#" class="dropdown-item">Activity log       </a> -->
@@ -123,19 +125,19 @@
         <div class="page-holder w-100 d-flex flex-wrap">
             <div class="container-fluid px-xl-5" id="dashbg">
                 <section class="py-5">
-                    <div class="col-lg-12 " style="border: 4px solid #fea500;padding: 0;border-radius: 19px 19px 0 0;" id="dashcardbrdr">
-                        <div class="card">
-                            <div class="card-header" >
+                    <div class="col-lg-12 " style="border: 4px solid #1FA2FF;padding: 0;border-radius: 19px 19px 0 0;" id="dashcardbrdr">
+                        <div class="card" style="border-radius: 19px 19px 0 0 ;">
+                            
                                 <!-- <nav class="nav nav-pills flex-column flex-sm-row">
                       <a class="flex-sm-fill text-sm-center nav-link active" aria-current="page" href="#create" onclick="creEvent()">Create</a>
                       <a class="flex-sm-fill text-sm-center nav-link active" aria-current="page" href="#update" onclick="updateEvent()">Update</a>
                       <a class="flex-sm-fill text-sm-center nav-link active" aria-current="page" href="#notify" onclick="notifyEvent()">Notify</a>
                     </nav> -->
-                            </div>
+                            
                             <div class="card-body" id="dashcard">
                                 <div class="form pl-0">
                                     <div class="tab-content">
-                                        <center><img src="/img/ATHENA logo final.png" class='img-fluid img-responsive' style = 'height:150px;width:auto;' id="dashlogo"
+                                        <center><img src="https://iste-tkmce.github.io/TOOLS/athena_blue.png" class='img-fluid img-responsive' style = 'height:150px;width:auto;' id="dashlogo"
                                                 alt=""></center>
 
                                         <div id="update" style="display:none">
@@ -186,16 +188,16 @@
 
                 </section>
                 <section class="">
-                    <div class="col-lg-12 mb-5" id="dashbrdr2" style="border: 4px solid #fea500;padding: 0;border-radius: 19px 19px 0 0;">
+                    <div class="col-lg-12 mb-5" id="dashbrdr2" style="border: 4px solid #1FA2FF;padding: 0;border-radius: 0px 0px 19px 19px;">
                         <div class="card">
-                            <div class="card-header" >
+                          
                                 <!-- <nav class="nav nav-pills flex-column flex-sm-row">
                       <a class="flex-sm-fill text-sm-center nav-link active" aria-current="page" href="#create" onclick="creEvent()">Create</a>
                       <a class="flex-sm-fill text-sm-center nav-link active" aria-current="page" href="#update" onclick="updateEvent()">Update</a>
                       <a class="flex-sm-fill text-sm-center nav-link active" aria-current="page" href="#notify" onclick="notifyEvent()">Notify</a>
                     </nav> -->
-                            </div>
-                            <div class="card-body" id="dashcard2">
+                            
+                            <div class="card-body " id="dashcard2">
                                 <div class="form pl-0">
                                     <div class="tab-content">
                                        
@@ -225,10 +227,10 @@
 
                 </section>
             </div>
-            <footer class="footer bg-white shadow align-self-end py-3 px-xl-5 w-100" id="footer">
+            <footer class="footer bg-white align-self-end py-3 px-xl-5 w-100" id="footer">
                 <div class="container-fluid">
                     <div class="row">
-                        <div class="col-md-6 text-center text-md-left text-warning">
+                        <div class="col-md-6 text-center text-md-left text-black">
                             <p class="mb-2 mb-md-0">ISTE TKMCE &copy;</p>
                         </div>
                     </div>
