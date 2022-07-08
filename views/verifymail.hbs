@@ -29,7 +29,7 @@
     <style>
  :root{
   --mainClr: black;
-  --subClr: #fea500;
+  --subClr: #1FA2FF;
   --subClr2: white;
   --facebook: #3b5999;
   --youtube: #FF0000;
@@ -76,10 +76,10 @@ background-color:#fff;
 .curved {
   margin-top:60px;
   position: relative;
-  background:#fea500;
+  background:#1FA2FF;
   height: 30vh;
-  border-bottom-left-radius: 50% 20%;
-  border-bottom-right-radius: 50% 20%;
+  {{!-- border-bottom-left-radius: 50% 20%;
+  border-bottom-right-radius: 50% 20%; --}}
 }
 
 .designer{
@@ -135,7 +135,7 @@ background-color:#fff;
       <div class="container">
         <div class="row align-items-center py-5">
           <div class="col-4 col-lg-4 mx-auto mb-5 mb-lg-0">
-            <div class="pr-lg-5"><img src="/img/logo1.png"  alt="" class="img-fluid"></div>
+            <div class="pr-lg-5"><img src="https://iste-tkmce.github.io/TOOLS/athena_blue.png"  alt="" class="img-fluid"></div>
           </div>
           <div class="col-lg-5 px-lg-4">
             <!-- <h1 class="text-base text-primary text-uppercase mb-4">Bubbly Dashboard</h1> -->
@@ -146,21 +146,22 @@ background-color:#fff;
                 <!-- <div class="col-lg-6">
                     
                 </div> -->
+                          <div class="col-lg-6 form-group flex">
+                            <button onclick="sendotp()" type="button" class="btn btn-primary shadow px-5" id="veri" style = 'background: linear-gradient(to right, #1FA2FF 0%, #12D8FA  51%, #1FA2FF  100%);color:black;;color:black;'>Send OTP</button>
+                            <button type="submit" style="display: none;background: linear-gradient(to right, #1FA2FF 0%, #12D8FA  51%, #1FA2FF  100%);color:black;;color:black;" type="button" class="btn shadow px-5" id="verifyotp" >Verify Mail</button>
+                            <!-- <input type="number" name="text" placeholder="Year(1,2,3,4)" class="form-control border-0 shadow form-control-lg"> -->
+                          </div>
                           <div class="col-lg-6 form-group">
                             <input type="number" name="otp" placeholder="OTP" onkeyup="manage(this)" style="display: none;" id="otp" class="form-control border-0 shadow form-control-lg">
                           </div>
 
-                          <div class="col-lg-6 form-group">
-                            <button onclick="sendotp()" type="button" class="btn btn-primary shadow px-5" id="veri" style = 'background-color:#fea500;color:black;'>Send OTP</button>
-                            <button type="submit" style="display: none; background-color:#fea500;color:black;" type="button" class="btn btn-primary shadow px-5" id="verifyotp" >Verify Mail</button>
-                            <!-- <input type="number" name="text" placeholder="Year(1,2,3,4)" class="form-control border-0 shadow form-control-lg"> -->
-                          </div>
+                          
             </div>
             <div class="row">
 
                 <div class="col-lg-6 form-group">
       
-                    <a href="/logout"><button type="button" class="btn btn-primary shadow px-5" id="logoutbutton"  style = 'background-color:#fea500;color:black;'>Logout</button></a>
+                    <a href="/logout"><button type="button" class="btn  shadow px-5" id="logoutbutton"  style = 'background: linear-gradient(to right, #1FA2FF 0%, #12D8FA  51%, #1FA2FF  100%);color:black;;color:black;'>Logout</button></a>
                 </div>
             </div>
             </form>

@@ -49,10 +49,10 @@ background-color:#fff;
 .curved {
   margin-top:60px;
   position: relative;
-  background:orange;
+  background:#1FA2FF;
   height: 30vh;
-  border-bottom-left-radius: 50% 20%;
-  border-bottom-right-radius: 50% 20%;
+  /* border-bottom-left-radius: 50% 20%;
+  border-bottom-right-radius: 50% 20%; */
 }
 
 .designer{
@@ -204,10 +204,13 @@ td{
 }
 
 .card:nth-child(1):hover{
-color:orange;
+color:#1FA2FF;
 }
 
 #checkout{
   font-weight:700;
 
+}
+.card-title:hover{
+  color: #1FA2FF;
 }

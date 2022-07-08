@@ -51,14 +51,14 @@
 
 
         <div class="row mx-auto text-center">
-            <div class="col-12  p-1 mb-5 bg-warning mx-auto" style = 'border-radius:10px;'>
+            <div class="col-12  p-1 mb-5 mx-auto" style = 'border-radius:10px; background-color:#1FA2FF'>
             <h4>REGISTERED EVENTS</h4>
             </div>
         </div>
         <table class="table table-dark table-striped table-bordered table-hover mt-2">
             
             <thead>
-                <tr class = 'bg-warning'>
+                <tr class = '' style="background-color:#1FA2FF">
                     <th>Sno</th>
                     <th>Event name</th>
                     <th>Reg amount</th>
@@ -88,7 +88,7 @@
         <div class="card-deck mt-5">
             <div class="card">
                 <div class="card-body">
-                    <h4 class="card-title">Total Amount: <span> {{registrationamount}}</span></h4>
+                    <h4 class="card-title" >Total Amount: <span> {{registrationamount}}</span></h4>
                 </div>
             </div>
           
@@ -98,7 +98,7 @@
             <div class="card">
                 <div class="card-body" style = 'display:flex; justify-content: flex-end;'>
 
-                    <button class = 'btn btn-warning' id="rzp-button1">Checkout</button>
+                    <button class = 'btn ' style="background: linear-gradient(to right, #1FA2FF 0%, #12D8FA  51%, #1FA2FF  100%);color:black;" id="rzp-button1">Checkout</button>
                 </div>
             </div>
 
@@ -155,7 +155,7 @@ document.getElementById('rzp-button1').onclick = function(e){
     "order_id":  orderinfo[0].id ,
     "callback_url": "/userdashboard/eventafterpayment",
     "theme": {
-        "color": "#fea500"
+        "color": "#1FA2FF"
     }
 };
     var rzp1 = new Razorpay(options);

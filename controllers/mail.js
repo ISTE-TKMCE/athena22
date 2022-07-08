@@ -8,7 +8,7 @@ const mg = mailgun({apiKey: process.env.MAILGUN_NAME, domain: process.env.MAILGU
 module.exports.otpmail =(email,otp,name) => {
     return new Promise((resolve, reject)=> {
         let data = {
-            from: 'noreply@athenatkmce.live',
+            from: 'noreply@sandbox93381424c0944e5285a41206acec6421.mailgun.org',
             to: email,
             subject: 'Confirm OTP | Athena22',
             template: "athena",
