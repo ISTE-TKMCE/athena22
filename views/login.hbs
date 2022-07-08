@@ -25,7 +25,7 @@
     <style>
  :root{
   --mainClr: black;
-  --subClr: #fea500;
+  --subClr: #1FA2FF;
   --subClr2: white;
   --facebook: #3b5999;
   --youtube: #FF0000;
@@ -72,10 +72,9 @@ background-color:#fff;
 .curved {
   margin-top:60px;
   position: relative;
-  background:#fea500;
+  background:var(--subClr);
   height: 30vh;
-  border-bottom-left-radius: 50% 20%;
-  border-bottom-right-radius: 50% 20%;
+ 
 }
 
 .designer{
@@ -153,8 +152,8 @@ background-color:#fff;
                   <label for="customCheck1" class="custom-control-label">Remember Me</label>
                 </div>
               </div>
-              <button type="submit" class="btn btn-primary shadow px-5" style="background-color:#fea500;color:black;">Log in</button>
-              <a href="/signup" class="btn btn-primary shadow px-5" style="background-color:#fea500;color:black;">Register Instead</a>
+              <button type="submit" class="btn btn-primary shadow px-5" style="background: linear-gradient(to right, #1FA2FF 0%, #12D8FA  51%, #1FA2FF  100%);color:black;">Log in</button>
+              <a href="/signup" class="btn btn-primary shadow px-5" style="background: linear-gradient(to right, #1FA2FF 0%, #12D8FA  51%, #1FA2FF  100%);color:black;">Register Instead</a>
             </form>
              {{#if message}}
                  <div id="error" >
