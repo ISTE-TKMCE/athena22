@@ -1,236 +1,583 @@
-<!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Athena 22</title>
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css?family=Heebo:400,400i,500,700|Titillium+Web:600" rel="stylesheet">
-    <link rel="stylesheet" href="dist/css/style.css">
+
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta name="Description" content="Enter your description here" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
 	<link
 	rel="stylesheet"
 	href="https://unpkg.com/swiper/swiper-bundle.min.css"
   />
-	<link rel="stylesheet" href="./dist/css/variableStyle.css">
-    <script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
+	<link rel="icon" href="img/flogo.png">
+
+	<link rel="stylesheet" href="css/style.css">
+
+	<title>Athena-21</title>
 </head>
-<body class="is-boxed">
-	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-		<div class="container-fluid">
-		  <a class="navbar-brand" href="#">Athena</a>
-		  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-			<span class="navbar-toggler-icon"></span>
-		  </button>
-		  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-			<ul class="navbar-nav me-auto mb-2 mb-lg-0">
-			  <li class="nav-item">
-				<a class="nav-link active" aria-current="page" href="#">Home</a>
-			  </li>
-			  <li class="nav-item">
-				<a class="nav-link active" href="/events">Event</a>
-			  </li>
-			  <li class="nav-item">
-				<a class="nav-link active" href="#content">About</a>
-			  </li>
-			  <li class="nav-item">
-				<a class="nav-link active" href="/login">Login</a>
-			  </li>
-			
-			 
-			</ul>
-			
-		  </div>
-		</div>
-	  </nav>
-    <div class="body-wrap boxed-container" style="background-color:black;">
-        <header class="site-header">
-            <div class="container">
-                <div class="site-header-inner">
-                    <div class="brand header-brand">
-                        <h1 class="m-0">
-                            <a href="#">
-								
-                            </a>
-                        </h1>
-                    </div>
-                </div>
-            </div>
-        </header>
 
-        <main>
-			
-            <section class="hero containers"id="first-container">
-                <div class="container">
-                    <div class="hero-inner" >
-						<div class="hero-copy" >
-	                        <h1 class="hero-title mt-0 is-revealing">Athena</h1>
-							<h1 class="mx-auto text-center">22</h1>
+<body>
 
-							<!-- <div class="social-media-icons">
-								<a href=""><img src="./dist/img/instagram.png" class=""  alt="instagram"></a>
-								<a href=""><img src="./dist/img/linkedin.png" alt=""></a>
-							</div> -->
+
+
+
+
+
+	<div id="showAthena">
+
+		<nav class="navbar navbar-expand-sm navbar-dark fixed-top" style="background-color: black;" id='navigation'>
+			<button class="navbar-toggler d-lg-none btn" style='background-color: #1FA2FF;' type="button"
+				data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId"
+				aria-expanded="false" aria-label="Toggle navigation"><i class="fas fa-bars"
+					style="color:#fff;"></i></button>
+			<div class="collapse navbar-collapse" id="collapsibleNavId">
+				<ul class="navbar-nav mx-sm-auto mt-2 mt-lg-0">
+					<li class="nav-item ml-md-5 mr-md-5">
+						<a class="nav-link  ml-md-0 ml-3 header-font" href="#home">HOME</a>
+					</li>
+
+					<li class="nav-item ml-md-5 mr-md-5 header-font ">
+						<a class="nav-link  ml-md-0 ml-3" href="#about">ABOUT</a>
+					</li>
+
+					<li class="nav-item ml-md-5 mr-md-5 header-font">
+						<a class="nav-link  ml-md-0 ml-3" href="/events">EVENTS</a>
+					</li>
+					<li class="nav-item ml-md-5 mr-md-5 header-font">
+						<a class="nav-link  ml-md-0 ml-3"
+							href="https://api.whatsapp.com/send?phone=+918129158874&text=ASSIST ME?">CONTACT</a>
+					</li>
+					<li class="nav-item ml-md-5 mr-md-5 header-font">
+						<a class="nav-link  ml-md-0 ml-3" href="/login">LOGIN</a>
+					</li>
+
+
+
+				</ul>
+
+			</div>
+		</nav>
+
+		<iv class="container-fluid p-1">
+
+
+			<section id="home">
+				<img src="img/athena.jpeg" id='owl' loading='lazy' alt="">
+				<img src="img/1.png" alt="" loading='lazy' id='owl-right'>
+				<img src="https://iste-tkmce.github.io/TOOLS/athena_blue.png" class="img-fluid img-responsive" id="logo"
+					alt="" srcset="">
+				<img src="img/1.png" alt="" loading='lazy' id='owl-left'>
+
+				<div id="hbox1" class='mt-5 mx-auto'>
+
+					<div class="row text-center">
+
+						<div class="col-12 mx-auto header-font">
+							<p id='festname' class='mx-auto'><span>A</span><span>TH</span><span>EN</span><span>A</span>
+							</p>
+
 						</div>
-						<div class="hero-illustration">
-							<div class="hero-bg">
-								<svg width="720" height="635" xmlns="http://www.w3.org/2000/svg">
-								    <defs>
-								        <linearGradient x1="50%" y1="0%" x2="50%" y2="97.738%" id="a">
-								            <stop stop-color="#000000" offset="0%"/>
-								            <stop stop-color="#111111" offset="100%"/>
-								        </linearGradient>
-								    </defs>
-								    <path d="M0 0h720v504.382L279.437 630.304c-53.102 15.177-108.454-15.567-123.631-68.669-.072-.25-.142-.5-.211-.75L0 0z" fill="url(#a)" fill-rule="evenodd"/>
-								</svg>
-							</div>
-							<div class="hero-square hero-square-1 is-moving-object is-rotating">
-								
-							</div>
-						
-							
-							<div class="hero-square hero-square-4 is-moving-object is-rotating">
-								<img src="https://iste-tkmce.github.io/TOOLS/athena_blue.png" class="img-athena-blue" alt="">
-								
-							</div>
-						
-						
-						
-						
-						 
-					
-							<div class="hero-dots hero-dots-3 is-moving-object is-translating" data-translating-factor="160">
-						
-						
-						</div>
-                    </div>
-                </div>
-            </section>
-
-<section class="containers p-5" id="content">
-
-	<div class="card-deck row mx-auto">
-		<div class="card col-md-5 mx-auto">
-		
-				<div class="card-body">
-					<div class="card-title text-center text-uppercase">About ISTE</div>
-				  <div class="card-text">
-					ISTE Students’ Chapter assists and contributes in the production and development of top quality professional engineers and technicians needed by the industry and other organizations and also provides guidance and training to students to develop better learning skills and personality
-				  </div>
-				</div>
-		</div>
-		<div class="card col-md-5 mx-auto">
-		
-			<div class="card-body">
-				<div class="card-title text-center text-uppercase">
-					About Athena
-				</div>
-			  Athena 22 is the annual techno cultural fest of ISTE students chapter TKMCE is the embodiment of commemoration of anything technical and beyond. ATHENA'22 provides a manifesto of oppurtunities to showcase and enrich young talents and transforms their creativity into reality.
-			</div>
-	</div>
-	</div>
-
-</section>
-
-<section class="containers p-5" id="third-container">
-
-
-	<h3>events</h3>
-
-	<div class="row p-5">
-
-		<h2 class="text-center">coming soon</h2>
-		<!-- <div class="swiper mySwiper">
-			<div class="swiper-wrapper">
-			  <div class="swiper-slide">Slide 1</div>
-			  <div class="swiper-slide">Slide 2</div>
-			  <div class="swiper-slide">Slide 3</div>
-			  <div class="swiper-slide">Slide 4</div>
-			  <div class="swiper-slide">Slide 5</div>
-			  <div class="swiper-slide">Slide 6</div>
-			  <div class="swiper-slide">Slide 7</div>
-			  <div class="swiper-slide">Slide 8</div>
-			  <div class="swiper-slide">Slide 9</div>
-			</div>
-			<div class="swiper-pagination"></div>
-		  </div> -->
-	</div>
-
-</section>
-        </main>
-
-        <footer class="site-footer">
-			<div class="footer-bg">
-				<svg width="385" height="305" xmlns="http://www.w3.org/2000/svg">
-				    <defs>
-				        <linearGradient x1="50%" y1="34.994%" x2="50%" y2="97.738%" id="footer-bg">
-				            <stop stop-color="#000000" offset="0%"/>
-				            <stop stop-color="#111111" offset="100%"/>
-				        </linearGradient>
-				    </defs>
-				    <path d="M384.557 116.012V305H0L210.643 0l173.914 116.012z" fill="url(#footer-bg)" fill-rule="evenodd"/>
-				</svg>
-			</div>
-			<div class="footer-dots is-moving-object is-translating" data-translating-factor="160">
-				<svg width="69" height="91" xmlns="http://www.w3.org/2000/svg">
-				    <g fill="#43F1FF" fill-rule="evenodd">
-				        <path d="M37.105 41.007l-2.9 1.334-.786 2.823.926 2.689 2.76 1.154 2.6-1.31 1.714-2.533-1.296-2.94z"/>
-				        <path fill-opacity=".64" d="M63.109 27.24l-1.45.666-.394 1.412.464 1.344 1.38.577 1.3-.655.856-1.266-.647-1.47z"/>
-				        <path fill-opacity=".24" d="M66.226 86.638l-1.45.667-.393 1.412.463 1.344 1.38.577 1.3-.655.857-1.266-.648-1.47z"/>
-				        <path fill-opacity=".64" d="M13.497 43.713l-2.175 1-.59 2.118.695 2.016 2.07.866 1.95-.983 1.285-1.9-.972-2.204z"/>
-				        <path fill-opacity=".8" d="M59.076 56.658l-2.175 1-.59 2.117.695 2.017 2.07.866 1.949-.983 1.286-1.9-.972-2.204z"/>
-				        <path fill-opacity=".48" d="M22.262 18.49l-1.45.667-.393 1.412.463 1.344 1.38.577 1.3-.655.857-1.266-.648-1.47z"/>
-				        <path fill-opacity=".64" d="M23.422.5l-1.45.667-.393 1.412.463 1.344 1.38.577 1.3-.655.857-1.266-.648-1.47z"/>
-				        <path fill-opacity=".48" d="M2.637 12.5l-1.45.667-.393 1.412.463 1.344 1.38.577 1.3-.655.857-1.266-.648-1.47zM36.563 10.856l-.725.334-.197.706.232.672.69.288.65-.327.428-.633-.324-.735z"/>
-				    </g>
-				</svg>
-			</div>
-            <div class="container">
-                <div class="site-footer-inner has-top-divider">
-                    <div class="footer-copyright">
-					Copyright &#169; 404 ISTE TKMCE &nbsp;<a href="mailto:404istetkmce.com">404istetkmce.com</a>&nbsp;<a href="tel:+919895356764" >Call us</a>
 					</div>
-					<ul class="footer-social-links list-reset">
-						<li>
-							<a href="tel:+917994954917">
-							contact us
-							</a>
-						</li>
-						<li>
-							<a href="/privacy">
-							privacy policy
-							</a>
-						</li>
-						<li>
-							<a href="/refund">
-							refund
-							</a>
-						</li>
-						<li>	
-							<a href="/terms">
-								terms and conditions
-							</a>
-						</li>
-					</ul>
-                </div>
-            </div>
-        </footer>
-    </div>
+					<div class="row">
 
-    <script src="dist/js/main.min.js"></script>
-	<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+						<div class="col-12 mx-auto">
 
-    <!-- Initialize Swiper -->
-    <script>
-      var swiper = new Swiper(".mySwiper", {
-        slidesPerView: 3,
-        spaceBetween: 30,
-        freeMode: true,
-        pagination: {
-          el: ".swiper-pagination",
-          clickable: true,
+							<p id='year' class="header-font"><span>'2</span><span>2</span></p>
+
+						</div>
+					</div>
+
+
+
+					<div class="row ">
+						<div id="scrollDown">
+							<span><a href="#events"></a></span>
+						</div>
+					</div>
+
+				</div>
+
+			</section>
+			<section id="about" class='mt-4 mb-5'>
+				<!-- <img src="/img/moon.png"id="moon" alt="" srcset=""> -->
+				<section id="about-curved"></section>
+
+				<div class="row mt-md-5 mt-1 mx-auto">
+					<div class="col-12 mx-auto ">
+						<h2 class='mx-auto  my-auto text-center header-font' id='aheading'>ABOUT</h2>
+					</div>
+				</div>
+
+				<div class="row mx-auto mt-md-5">
+					<div class="col-12 mx-auto">
+
+
+						<div class="row">
+							<div class="col-lg-4 mx-auto">
+
+
+
+								<div class="card">
+									<div class="card-body">
+
+										<h4 class="card-title w-100 " style='display:grid;align-items:center;'>
+
+											<span class="text-center header-font" style='font-size:larger;'>ISTE</span>
+										</h4>
+										<hr>
+
+										<p class="card-text text-justify">ISTE Students’ Chapter assists and contributes
+											in the production and development of top quality professional engineers and
+											technicians needed by the industry and other organizations and also provides
+											guidance and training to students to develop better learning skills and
+											personality.</p>
+
+									</div>
+								</div>
+
+							</div>
+							<div class="col-lg-2 text-center">
+								<!-- <div class=""><img src="img/logo.png" class = 'img-responsive img-fluid' alt=""></div> -->
+
+								<svg id="wrapperSvg" viewBox="0 0 80 80">
+									<svg viewBox="0 0 500 500" id="shield" height="200" width="200" x="0" y="0">
+										<defs>
+											<filter id="noise">
+												<feTurbulence baseFrequency="0.035" xresult="" numOctaves="6" />
+												<feColorMatrix in="" type="matrix"
+													values=".7 .33 .33 0 0 .33 .33 .33 0 0 .33 .33 .33 0 0 1 1 0 1 0" />
+												<feComposite operator="in" in2="SourceGraphic" result="monoNoise" />
+												<feBlend in="SourceGraphic" in2="monoNoise" mode="multiply" />
+											</filter>
+											<filter id="second-noise">
+												<feTurbulence baseFrequency="0.035" xresult="" numOctaves="4" />
+												<feColorMatrix in="" type="matrix"
+													values=".7 .33 .33 0 0 .33 .33 .33 0 0 .33 .33 .33 0 0 1 1 0 1 0" />
+												<feComposite operator="in" in2="SourceGraphic" result="monoNoise" />
+												<feBlend in="SourceGraphic" in2="monoNoise" mode="multiply" />
+											</filter>
+											<filter id="third-noise">
+												<feTurbulence baseFrequency="0.035" xresult="" numOctaves="5" />
+												<feColorMatrix in="" type="matrix"
+													values=".7 .33 .33 0 0 .33 .33 .33 0 0 .33 .33 .33 0 0 1 1 0 1 0" />
+												<feComposite operator="in" in2="SourceGraphic" result="monoNoise" />
+												<feBlend in="SourceGraphic" in2="monoNoise" mode="multiply" />
+											</filter>
+											<filter id="light-noise">
+												<feTurbulence baseFrequency="0.035" xresult="" numOctaves="3" />
+												<feColorMatrix in="" type="matrix"
+													values=".33 .33 .33 0 0 .33 .7 .33 0 0 .33 .33 .33 0 0 0 0 0 1 0" />
+												<feComposite operator="atop" in2="SourceGraphic" result="monoNoise" />
+												<feBlend in="SourceGraphic" in2="monoNoise" mode="multiply" />
+											</filter>
+											<filter id="lighter-noise">
+												<feTurbulence baseFrequency="0.035" xresult="" numOctaves="2" />
+												<feColorMatrix in="" type="matrix"
+													values=".33 .33 .33 0 0 .33 .7 .33 0 0 .33 .33 .33 0 0 0 0 0 1 0" />
+												<feComposite operator="atop" in2="SourceGraphic" result="monoNoise" />
+												<feBlend in="SourceGraphic" in2="monoNoise" mode="multiply" />
+											</filter>
+											<filter id="shadow1">
+												<feDropShadow dx="0" dy="0" stdDeviation="5" flood-color="#1FA2FF"
+													flood-opacity="0.5" />
+											</filter>
+											<filter id="shadow2">
+												<feDropShadow dx="0" dy="0" stdDeviation="5" flood-color="#1FA2FF"
+													flood-opacity="0.7" />
+											</filter>
+											<filter id="glow-filter" x="-56.9%" y="-145.1%" width="217.1%"
+												height="421.1%" filterUnits="objectBoundingBox">
+												<feGaussianBlur stdDeviation="0.1" in="SourceGraphic"
+													result="shadowBlurOuter1" />
+												<feColorMatrix
+													values="1 0 0 0 0   0 0.9 0 0 0   0 0 0.55 0 0  0 0 0 1 0"
+													type="matrix" in="shadowBlurOuter1" result="shadowMatrixOuter1" />
+												<feGaussianBlur stdDeviation="0.1" in="SourceGraphic"
+													result="shadowBlurOuter2" />
+												<feColorMatrix
+													values="0.98 0 0 0 0   0 0.75 0 0 0   0 0 0.35 0 0  0 0 0 0.9 0"
+													type="matrix" in="shadowBlurOuter2" result="shadowMatrixOuter2" />
+												<feGaussianBlur stdDeviation="0.1" in="SourceGraphic"
+													result="shadowBlurOuter3" />
+												<feColorMatrix
+													values="1 0 0 0 0   0 0.85 0 0 0   0 0 0.3 0 0  0 0 0 0.8 0"
+													type="matrix" in="shadowBlurOuter3" result="shadowMatrixOuter3" />
+												<feMerge>
+													<feMergeNode in="shadowMatrixOuter1" />
+													<feMergeNode in="shadowMatrixOuter2" />
+													<feMergeNode in="shadowMatrixOuter3" />
+												</feMerge>
+											</filter>
+											<filter id="glow-mid-dark-filter" x="-56.9%" y="-145.1%" width="217.1%"
+												height="421.1%" filterUnits="objectBoundingBox">
+												<feGaussianBlur stdDeviation="0.15" in="SourceGraphic"
+													result="shadowBlurOuter4" />
+												<feColorMatrix
+													values="1 0 0 0 0   0 0.9 0 0 0   0 0 0.55 0 0  0 0 0 1 0"
+													type="matrix" in="shadowBlurOuter4" result="shadowMatrixOuter4" />
+												<feGaussianBlur stdDeviation="0.15" in="SourceGraphic"
+													result="shadowBlurOuter5" />
+												<feColorMatrix
+													values="0.98 0 0 0 0   0 0.75 0 0 0   0 0 0.35 0 0  0 0 0 0.8 0"
+													type="matrix" in="shadowBlurOuter5" result="shadowMatrixOuter5" />
+												<feGaussianBlur stdDeviation="0.15" in="SourceGraphic"
+													result="shadowBlurOuter6" />
+												<feColorMatrix
+													values="0.98 0 0 0 0   0 0.75 0 0 0   0 0 0.35 0 0  0 0 0 0.8 0"
+													type="matrix" in="shadowBlurOuter6" result="shadowMatrixOuter6" />
+												<feMerge>
+													<feMergeNode in="shadowMatrixOuter4" />
+													<feMergeNode in="shadowMatrixOuter5" />
+													<feMergeNode in="shadowMatrixOuter6" />
+												</feMerge>
+											</filter>
+											<filter id="glow-mid-light-filter" x="-56.9%" y="-145.1%" width="217.1%"
+												height="421.1%" filterUnits="objectBoundingBox">
+												<feGaussianBlur stdDeviation="0.2" in="SourceGraphic"
+													result="shadowBlurOuter7" />
+												<feColorMatrix
+													values="1 0 0 0 0   0 0.9 0 0 0   0 0 0.55 0 0  0 0 0 1 0"
+													type="matrix" in="shadowBlurOuter7" result="shadowMatrixOuter7" />
+												<feGaussianBlur stdDeviation="0.2" in="SourceGraphic"
+													result="shadowBlurOuter8" />
+												<feColorMatrix
+													values="0.98 0 0 0 0   0 0.75 0 0 0   0 0 0.35 0 0  0 0 0 0.8 0"
+													type="matrix" in="shadowBlurOuter8" result="shadowMatrixOuter8" />
+												<feGaussianBlur stdDeviation="0.2" in="SourceGraphic"
+													result="shadowBlurOuter9" />
+												<feColorMatrix values="1 0 0 0 0 0 0.93 0 0 0 0 0 0.7 0 0 0 0 0 0.7 0"
+													type="matrix" in="shadowBlurOuter9" result="shadowMatrixOuter9" />
+												<feMerge>
+													<feMergeNode in="shadowMatrixOuter7" />
+													<feMergeNode in="shadowMatrixOuter8" />
+													<feMergeNode in="shadowMatrixOuter9" />
+												</feMerge>
+											</filter>
+											<filter id="glow-light-filter" x="-56.9%" y="-145.1%" width="217.1%"
+												height="421.1%" filterUnits="objectBoundingBox">
+												<feGaussianBlur stdDeviation="0.25" in="SourceGraphic"
+													result="shadowBlurOuter10" />
+												<feColorMatrix
+													values="1 0 0 0 0   0 0.9 0 0 0   0 0 0.55 0 0  0 0 0 1 0"
+													type="matrix" in="shadowBlurOuter10" result="shadowMatrixOuter10" />
+												<feGaussianBlur stdDeviation="0.25" in="SourceGraphic"
+													result="shadowBlurOuter11" />
+												<feColorMatrix
+													values="0.98 0 0 0 0   0 0.75 0 0 0   0 0 0.35 0 0  0 0 0 0.9 0"
+													type="matrix" in="shadowBlurOuter11" result="shadowMatrixOuter11" />
+												<feGaussianBlur stdDeviation="0.25" in="SourceGraphic"
+													result="shadowBlurOuter12" />
+												<feColorMatrix values="1 0 0 0 0 0 0.93 0 0 0 0 0 0.7 0 0 0 0 0 0.8 0"
+													type="matrix" in="shadowBlurOuter12" result="shadowMatrixOuter12" />
+												<feMerge>
+													<feMergeNode in="shadowMatrixOuter10" />
+													<feMergeNode in="shadowMatrixOuter11" />
+													<feMergeNode in="shadowMatrixOuter12" />
+												</feMerge>
+											</filter>
+										</defs>
+										<g class="rotation-group" id="lines-group">
+											<!-- Lines in the most inner-circle -->
+											<!-- Top to Bottom -->
+											<line x1="96" y1="90" x2="96" y2="110" class="inner-line" />
+											<line x1="104" y1="90" x2="104" y2="110" class="inner-line" />
+
+											<!-- Horizontal -->
+											<line x1="90" y1="95" x2="110" y2="95" class="inner-line" />
+											<line x1="90" y1="105" x2="110" y2="105" class="inner-line" />
+
+											<!-- Diagonal -->
+											<!-- \ -->
+											<line x1="95" y1="90" x2="110" y2="104" class="inner-line" />
+											<line x1="98" y1="90" x2="111" y2="102" class="inner-line" />
+											<line x1="90" y1="96" x2="105" y2="110" class="inner-line" />
+											<line x1="89" y1="98" x2="103" y2="111" class="inner-line" />
+											<!-- / -->
+											<line x1="103" y1="90" x2="89" y2="102" class="inner-line" />
+											<line x1="106" y1="90" x2="90" y2="104" class="inner-line" />
+											<line x1="111" y1="96" x2="95" y2="110" class="inner-line" />
+											<line x1="111" y1="99" x2="97" y2="111" class="inner-line" />
+										</g>
+										<path id="circle" fill="none"
+											d="M 100 100 m -75, 0 a 75,75 0 1,1 150,0 a 75,75 0 1,1 -150,0" />
+										<text class="text-circle circle-outter">
+											<textPath href="#circle" textLength="500" class="text-circle-small-inner">
+												011000010111010001101000011001010110111001100001
+											</textPath>
+										</text>
+										<path id="mainCircle" fill="none"
+											d="M 100 100 m -58, 0 a 58,58 0 1,1 116,0 a 58,58 0 1,1 -116,0" />
+										<text class="text-circle circle-large">
+											<textPath href="#mainCircle" textLength="500" class="text-circle-large">
+												⊯⋇ᾇᾖ∰⪹⨊ϟϏᾮϗζų२≧▽ʑʓʔ௹૱₺₡৻৲૱₱₲₾₷₱₯μΞνζΘδλ⨖⨤∂∴≒₲₾₷₱≎νζΘδλ⨖⨤∂∴
+											</textPath>
+										</text>
+										<path id="innerCircle" fill="none"
+											d="M 100 100 m -46, 0 a 46,46 0 1,1 92,0 a 46,46 0 1,1 -92,0" />
+										<text class="text-circle circle-inner">
+											<textPath href="#innerCircle" textLength="500"
+												class="text-circle-small-inner">
+												011000010111010001101000011001010110111001100001
+											</textPath>
+										</text>
+										<g class="rotation-group">
+											<circle cx="100" cy="100" r="11" stroke-width="1" class="inner-field">
+											</circle>
+											<circle cx="100" cy="100" r="20" stroke-width="1" class="inner-field">
+											</circle>
+											<circle cx="100" cy="100" r="35" class="inner-field"></circle>
+											<circle cx="100" cy="100" r="41" class="inner-field"></circle>
+											<circle cx="100" cy="100" r="43" class="inner-field"></circle>
+											<circle cx="100" cy="100" r="53.5" class="inner-field"></circle>
+											<circle cx="100" cy="100" r="73" class="inner-field"></circle>
+											<rect x="75" y="75" width="50" height="50" class="rect-right"></rect>
+											<rect x="75" y="75" width="50" height="50" class="rect-left"></rect>
+											<path id="polystarSmall" class="polystar polystar-small"
+												d="M 353.56836 0 L 262.46289 48.308594 L 255.33594 143.61328 L 183.30078 87.996094 L 93.457031 127.94141 L 62.5 228.78906 L 125.73828 302.25 L 33.939453 314.05469 L 0 402.33594 L 51.232422 498.95703 L 146.27148 506.06445 L 90.517578 578.27539 L 127.94141 662.44727 L 235.45508 695.45312 L 304.91016 635.66211 L 316.11133 722.75586 L 402.33594 755.90625 L 502.1543 702.97852 L 508.72266 615.12891 L 575.44531 666.64648 L 662.44727 627.96289 L 694.9082 522.22461 L 638.32031 456.49023 L 720.39648 445.93555 L 755.90625 353.56836 L 705.90234 259.26562 L 617.78711 252.67773 L 669.16797 186.13086 L 627.96289 93.457031 L 528.88672 63.042969 L 459.14844 123.07812 L 447.98828 36.300781 L 353.56836 0 z" />
+											<path id="polystarMedium" class="polystar polystar-medium"
+												d="M 353.56836 0 L 262.46289 48.308594 L 255.33594 143.61328 L 183.30078 87.996094 L 93.457031 127.94141 L 62.5 228.78906 L 125.73828 302.25 L 33.939453 314.05469 L 0 402.33594 L 51.232422 498.95703 L 146.27148 506.06445 L 90.517578 578.27539 L 127.94141 662.44727 L 235.45508 695.45312 L 304.91016 635.66211 L 316.11133 722.75586 L 402.33594 755.90625 L 502.1543 702.97852 L 508.72266 615.12891 L 575.44531 666.64648 L 662.44727 627.96289 L 694.9082 522.22461 L 638.32031 456.49023 L 720.39648 445.93555 L 755.90625 353.56836 L 705.90234 259.26562 L 617.78711 252.67773 L 669.16797 186.13086 L 627.96289 93.457031 L 528.88672 63.042969 L 459.14844 123.07812 L 447.98828 36.300781 L 353.56836 0 z" />
+											<path id="polystarLarge" class="polystar polystar-large"
+												d="M 353.56836 0 L 262.46289 48.308594 L 255.33594 143.61328 L 183.30078 87.996094 L 93.457031 127.94141 L 62.5 228.78906 L 125.73828 302.25 L 33.939453 314.05469 L 0 402.33594 L 51.232422 498.95703 L 146.27148 506.06445 L 90.517578 578.27539 L 127.94141 662.44727 L 235.45508 695.45312 L 304.91016 635.66211 L 316.11133 722.75586 L 402.33594 755.90625 L 502.1543 702.97852 L 508.72266 615.12891 L 575.44531 666.64648 L 662.44727 627.96289 L 694.9082 522.22461 L 638.32031 456.49023 L 720.39648 445.93555 L 755.90625 353.56836 L 705.90234 259.26562 L 617.78711 252.67773 L 669.16797 186.13086 L 627.96289 93.457031 L 528.88672 63.042969 L 459.14844 123.07812 L 447.98828 36.300781 L 353.56836 0 z" />
+										</g>
+									</svg>
+								</svg>
+
+							</div>
+							<div class="col-lg-4  mx-auto">
+
+
+								<div class="card ">
+									<div class="card-body">
+										<h4 class="card-title text-center header-font">ATHENA</h4>
+										<hr>
+										<p class="card-text mx-auto text-center text-justify">ATH<span
+												style='color:#1FA2FF;'>ENA</span>'21, the annual <span
+												style='color:#1FA2FF;font-size:large;'>techno-cultural fest</span> of
+											<span style='color:#1FA2FF;'>ISTE</span> students chapter <span
+												style='color:#1FA2FF'>TKMCE</span> ,is the embodiment of commemoration
+											of anything technical and beyond. ATH<span
+												style='color:#1FA2FF;'>ENA</span>'21 provides a manifesto of
+											oppurtunities to showcase and enrich young talents and transforms their
+											creativity into reality.
+									</div>
+								</div>
+
+
+							</div>
+						</div>
+					</div>
+				</div>
+
+
+			</section>
+
+			<!-- the place where events exists -->
+			<section id="events">
+
+				<div class="row mx-auto mt-5">
+					<div class="col-12 mx-auto text-center">
+						<h2 class='mx-auto header-font' id='eheading'>EVENTS</h2>
+					</div>
+				</div>
+
+				<div class="row w-100 mx-auto text-center mt-4 mb-1">
+					<div class="col-12 mx-auto text-center" id='ebuttons'>
+						<button class="btn-sm header-font" onclick="window.location.href='/events'">EVENTS</button>
+						<!-- <button class="btn-sm" onclick="window.location.href='/events'">WORKSHOPS</button> -->
+					</div>
+				</div>
+
+
+				<div id="esection1" class='p-2 p-sm-1 w-100 mt-2 eventsection'>
+
+					<div class="swiper mySwiper px-5">
+						<div class="swiper-wrapper">
+						  <div class="swiper-slide">Slide 1</div>
+						  <div class="swiper-slide">Slide 2</div>
+						  <div class="swiper-slide">Slide 3</div>
+						  <div class="swiper-slide">Slide 4</div>
+						  <div class="swiper-slide">Slide 5</div>
+						  <div class="swiper-slide">Slide 6</div>
+						  <div class="swiper-slide">Slide 7</div>
+						  <div class="swiper-slide">Slide 8</div>
+						  <div class="swiper-slide">Slide 9</div>
+						</div>
+						<div class="swiper-pagination"></div>
+					  </div>
+					
+				</div>
+
+
+			</section>
+
+			<section>
+
+
+			
+			</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+	</div>
+
+	<section class='footer p-2 p-sm-0 container-fluid' style='overflow-x:hidden;'>
+		<div class="container p-0">
+			<div class="row">
+				<div class="col-lg-6 offset-lg-3 pb-3">
+
+					<div class="socialmedialinks">
+
+						<div class="social-media-links"><a class="social-media-link social-media-link--facebook"
+								href="https://www.facebook.com/athenaiste21 "><i class="fab fa-facebook-f"></i></a>
+
+							<a class="social-media-link social-media-link--instagram"
+								href="https://instagram.com/_athena_21__?igshid=fk1bj6ecspcr"><i
+									class="fab fa-instagram"></i></a>
+
+							<a class="social-media-link social-media-link--youtube"
+								href="https://www.youtube.com/channel/UCnGnfbrVSt07-hldmmWK0DQ"><i
+									class="fab fa-youtube"></i></a>
+							<a class="social-media-link social-media-link--instagram" href="/terms"><i
+									class="fas fa-file"></i></a>
+							<a class="social-media-link social-media-link--facebook" href="/privacy"><i
+									class="fas fa-eye-slash"></i></a>
+							<a class="social-media-link social-media-link--youtube" href="/refund"><i
+									class="fas fa-money-check"></i></a>
+
+						</div>
+					</div>
+
+
+
+				</div>
+			</div>
+		</div>
+
+
+	</section>
+	<section id="footer-extended">
+		<div class="row mx-auto">
+			<div class="col-lg-12 mx-auto">
+				Copyright &#169; 404 ISTE TKMCE &nbsp;<a href="mailto:404istetkmce.com">404istetkmce.com</a>&nbsp;<a
+					href="tel:+919895356764">Contact Us</a>
+			</div>
+
+		</div>
+	</section>
+
+
+	<div id="upbtn"><a href="#home"><i class="fa fa-arrow-circle-up" aria-hidden="true"></i></a></div>
+
+
+	</div>
+
+
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
+	<script src='https://cdnjs.cloudflare.com/ajax/libs/Swiper/6.5.4/swiper-bundle.min.js'></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js"></script>
+
+	<script>
+		function showAlert() {
+			alert("Workshop Reg closed");
+		}
+	</script>
+	<!-- <script>
+    var swiper = new Swiper('.swiper-container', {
+      effect: 'coverflow',
+      grabCursor: true,
+      centeredSlides: true,
+      slidesPerView: 3,
+      spaceBetween: 30,
+      breakpoints: {
+        320: {
+          slidesPerView: 1,
+          spaceBetween: 10,
+
         },
-      });
-    </script>
+
+
+        600: {
+          slidesPerView: 2,
+          spaceBetween: 40,
+
+        },
+
+
+
+
+        1184: {
+          slidesPerView: 3,
+          spaceBetween: 20,
+        },
+
+        1300: {
+          slidesPerView: 3,
+          spaceBetween: 70,
+        }
+
+      },
+      coverflowEffect: {
+        rotate: 50,
+        stretch: 0,
+        depth: 100,
+        modifier: 1,
+        slideShadows: true,
+      },
+      pagination: {
+        el: '.swiper-pagination',
+      },
+    });
+
+
+  </script> -->
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+  <!-- Initialize Swiper -->
+  <script>
+	var swiper = new Swiper(".mySwiper", {
+	  slidesPerView: 3,
+	  spaceBetween: 30,
+	  freeMode: true,
+	  pagination: {
+		el: ".swiper-pagination",
+		clickable: true,
+	  },
+	  breakpoints:{
+		320: {
+          slidesPerView: 1,
+          spaceBetween: 10,
+
+        },
+		900:{
+			slidesPerView:3,
+			spaceBetween:20,
+		}
+	  }
+	});
+  </script>
+
+
+
+
+	<!-- <script src="js/index.js"></script> -->
+	<script>$(window).bind('orientationchange', function (event) {
+			location.reload(true);
+		});</script>
+
 </body>
+
 </html>
