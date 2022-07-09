@@ -14,20 +14,8 @@ let instance = new Razorpay({
 });
 
 module.exports.amountgenerator = (req, res) => {
-  // db.query("SELECT FROM registration WHERE name = ? ",[req.session.name], async(error, regresults)=>{
-  //     if(regresults.length===0){
-  //         console.log(results);
-  //         return res.send("Email Or Password Incorrect");
-  //     }
-  //     if(error){
-  //         console.log(error)
-  //     }
-  // console.log(regresults);
-  console.log(req.session.regdetails);
-  console.log(req.session.regdetails.event1);
   db.query("SELECT * FROM events ", async (error, results) => {
     if (results.length === 0) {
-      //console.log(results);
       return res.send("EVENTS ERROR : Contact Administrator");
     } else {
       discammount = 100;
@@ -36,65 +24,44 @@ module.exports.amountgenerator = (req, res) => {
       CAcodes = await getCACodes(enteredCCode1, enteredCCode2);
       CouponCode = [{ name: "EARLYBIRD", amount: 200 }];
       CouponCode.push(...CAcodes);
-      console.log(CouponCode);
       event1 = req.session.regdetails.event1;
       event2 = req.session.regdetails.event2;
       event3 = req.session.regdetails.event3;
       IsteReg = req.session.regdetails.ISTEregemail;
       pcbreq = req.session.regdetails.needpcbkit;
-
-      console.log(enteredCCode1);
-      console.log(enteredCCode2);
       verifiedCCode = [];
 
-      razorpayfee = 40;
+      razorpayfee1 = 0;
+      razorpayfee2 = 0;
+      razorpayfee3 = 0;
       registeredevents = [];
-      console.log("req.session.eventstocheck");
-      console.log(req.session.eventstocheck);
       checkevents = req.session.eventstocheck;
-      if (checkevents != undefined) {
-        registrationamount = 40;
-        checkevents.forEach((check) => {
-          console.log(event1);
-          if (check == event1) {
-            razorpayfee = 5;
-            registrationamount = 5;
-          }
-        });
-      } else {
-        registrationamount = 40;
-      }
-      console.log("req.session.eventstocheck");
-      console.log(req.session.eventstocheck);
-      console.log(registrationamount);
-      console.log(registrationamount);
-      console.log(registrationamount);
-      //console.log(results);
+      registrationamount = 0;
 
       results.forEach((event) => {
         if (event.name == event1) {
           eventname = event.name;
           eventmoney = event.eventamount;
+          razorpayfee1 = 0.02 * event.eventamount;
+          registrationamount += razorpayfee1;
           registrationamount += event.eventamount;
-          //console.log(registrationamount);
           registeredevents.push({ eventname, eventmoney });
         }
         if (event.name == event2) {
           eventname = event.name;
           eventmoney = event.eventamount;
-          registrationamount += event.eventamount;
-          //console.log(registrationamount);
+          razorpayfee2 = 0.02 * event.eventamount;
+          registrationamount += razorpayfee2;
           registeredevents.push({ eventname, eventmoney });
         }
         if (event.name == event3) {
           eventname = event.name;
           eventmoney = event.eventamount;
-          registrationamount += event.eventamount;
-          //console.log(registrationamount);
+          razorpayfee3 = 0.02 * event.eventamount;
+          registrationamount += razorpayfee3;
           registeredevents.push({ eventname, eventmoney });
         }
       });
-      console.log(registeredevents);
 
       check = true;
       if (enteredCCode1 === "" && enteredCCode2 === "") {
@@ -108,11 +75,9 @@ module.exports.amountgenerator = (req, res) => {
               registrationamount -= coupon.amount;
               verifiedCCode.push(coupon.name);
             }
-            //console.log("aftercoupon" + registrationamount);
           });
         } else if (enteredCCode1 != enteredCCode2) {
           CouponCode.forEach((coupon) => {
-            //console.log("Entered" + enteredCCode1+"Entered" + enteredCCode2);
             if (
               coupon.name === enteredCCode1 ||
               coupon.name === enteredCCode2
@@ -121,7 +86,6 @@ module.exports.amountgenerator = (req, res) => {
               console.log(registrationamount);
               verifiedCCode.push(coupon.name);
             }
-            //console.log("aftercoupon" + registrationamount);
           });
         }
       }
@@ -131,9 +95,9 @@ module.exports.amountgenerator = (req, res) => {
       }
 
       //////********************** */
-      console.log(verifiedCCode);
+
       req.session.registrationamount = registrationamount;
-      console.log("hey line 76");
+
       message = "";
       if (verifiedCCode[0] != undefined) {
         message += "Successfully applied coupons : " + verifiedCCode[0];
@@ -143,7 +107,7 @@ module.exports.amountgenerator = (req, res) => {
           message += " !";
         }
       }
-      //console.log(message);
+      razorpayfee = razorpayfee1 + razorpayfee2 + razorpayfee3;
       res.render("payment", {
         events: registeredevents,
         registrationamount: registrationamount,
@@ -179,8 +143,7 @@ function createOrderId(params) {
       .create(params)
       .then((data) => {
         orderid = data;
-        //console.log("heyyyyy");
-        //console.log(orderid);
+
         resolve(orderid);
       })
       .catch((error) => {
@@ -201,7 +164,7 @@ module.exports.paymentcontrol = async (req, res) => {
     { id: orderid.id, key: process.env.RAZORPAY_KEY, name: req.session.name },
   ];
   req.session.orderid = orderid;
-  //console.log(orderid);
+
   res.json(orderdet);
 };
 
@@ -231,7 +194,6 @@ module.exports.paymentaftercontrol = async (req, res) => {
   paidamount = req.session.orderid.amount / 100;
   paidtime = new Date().toLocaleString();
   if (expectedSignature === req.body.razorpay_signature) {
-    console.log(req.session.email);
     db.query(
       "INSERT INTO paidregistration SET ?",
       {
@@ -259,8 +221,6 @@ module.exports.paymentaftercontrol = async (req, res) => {
         if (error) {
           console.log(error);
         } else {
-          console.log("hey");
-          console.log(couponcode1.split("_"));
           if (couponcode1 && couponcode1.split("_")[0] == "CA") {
             updateCAUsed(couponcode1).then((newCode) => {
               console.log("updated");
@@ -329,12 +289,11 @@ function creatediscount(IsteReg, registrationamount) {
         [IsteReg],
         async (err, results) => {
           if (results.length === 0) {
-            //console.log(results[0])
             console.log(registrationamount);
             resolve(registrationamount);
           } else {
             registrationamount -= 200;
-            //console.log("Decreased")
+
             verifiedCCode.push("ISTE-MEMBER");
             resolve(registrationamount);
           }
@@ -383,11 +342,7 @@ function getCACodes(enteredCCode1, enteredCCode2) {
           console.log("No ca codes");
           resolve(codes);
         } else {
-          console.log("hey");
-          console.log(enteredCCode2);
-          console.log(enteredCCode1);
           checkEachCode(codes).then((Cacodes) => {
-            console.log(Cacodes);
             resolve(Cacodes);
           });
         }
@@ -414,7 +369,6 @@ function checkEachCode(codes) {
         }
       }
     });
-    console.log(Cacodes);
     resolve(Cacodes);
   });
 }

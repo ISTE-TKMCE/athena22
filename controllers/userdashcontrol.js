@@ -12,7 +12,6 @@ module.exports.loadevents = (req, res) => {
       if (err) {
         console.log(err);
       } else {
-        console.log(result);
         result.forEach((event) => {
           if (event.eventName1) {
             eventname = event.eventName1;
@@ -30,7 +29,7 @@ module.exports.loadevents = (req, res) => {
             registeredevents.push({ eventname, isPaid });
           }
         });
-        console.log(registeredevents);
+
         db.query("SELECT * FROM events", (err, eventresult) => {
           if (err) {
             console.log(err);
@@ -64,8 +63,6 @@ module.exports.loadevents = (req, res) => {
                   });
                 }
               });
-              console.log("registeredeventdets");
-              console.log(registeredeventdets);
             });
             res.render("user", {
               name: req.session.name,
@@ -91,7 +88,7 @@ module.exports.loadworkshopsatreg = (req, res) => {
         result.forEach((event) => {
           eventstoregister.push(event.name);
         });
-        console.log(eventstoregister);
+
         res.render("eventreg", { events: JSON.stringify(eventstoregister) });
       }
     }
@@ -109,8 +106,7 @@ module.exports.loadeventsateventreg = (req, res) => {
         result.forEach((event) => {
           eventstoregister.push(event.name);
         });
-        console.log("hi");
-        console.log(eventstoregister);
+
         req.session.eventstocheck = eventstoregister;
         res.render("eventregevent", {
           events: JSON.stringify(eventstoregister),
@@ -127,7 +123,6 @@ module.exports.ravelform = (req, res) => {
 module.exports.ravelformsubmit = (req, res) => {
   date = new Date().toLocaleString();
   const { email, name, a1, a2, a3, a4, a5 } = req.body;
-  console.log(req.body);
 
   db.query(
     "INSERT INTO crime SET ?",
