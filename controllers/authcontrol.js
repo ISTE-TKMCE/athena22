@@ -85,15 +85,15 @@ module.exports.register = (req,res) =>{
         }
         db.query("SELECT * FROM users where email = ?", [email], async(error, results)=>{
 
-            
+            console.log(results);
     
-            if(!results){
+            if(results.length == 0){
                 return res.status(401).render("login",{
                     message: "Email Or Password Incorrect"
                 });
             }
             if(error){
-                console.log(error)
+                console.log(error);
             }
 
             else if( !results || !(await (bcrypt.compare(password, results[0].password))) ){
