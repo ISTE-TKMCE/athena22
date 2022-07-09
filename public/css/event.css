@@ -26,13 +26,13 @@
   background:url(logo.png);
   background-size:cover;
   background-position:center;
-background-color:#fff;
   transform: translateX(-50%) translateY(50%);
   bottom: 0px;
 }
 
 .socialmedialinks{
-  margin-top:-60px;
+  margin-top:-70px;
+  padding-bottom:10px;
 }
 .socialmedialinks a{
   text-decoration:none;
@@ -120,8 +120,9 @@ footer {
   width:100%;
 background:black;
 color: #868c96;
-margin-top:20px;
-border-radius: 25% 23% 10% 10% / 89% 89% 10% 10% ;
+
+bottom:0;
+
 }
 
 footer p {
@@ -152,10 +153,9 @@ text-align: center;
 .curved {
 margin-top:60px;
 position: relative;
-background:orange;
+background:var(--subClr);
 height: 30vh;
-border-bottom-left-radius: 50% 20%;
-border-bottom-right-radius: 50% 20%;
+
 }
 
 .designer{
@@ -251,7 +251,7 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 400;
   margin: 0 0 20px 0;
   padding: 0;
-  color: #ffa500;
+  color: var(--subClr);
 }
 
 .main-page {
@@ -313,7 +313,7 @@ h1, h2, h3, h4, h5, h6 {
     background-color: #47414b3d;
     border: 1px solid ;
     border-radius: 10px;
-    border-color:#ffa500 ;
+    border-color:var(--subClr) ;
   }
 
 
@@ -321,14 +321,14 @@ h1, h2, h3, h4, h5, h6 {
   {background-color: #47414b3d;
     border: 1px solid ;
     border-radius: 10px;
-    border-color:#ffa500 ;
+    border-color:var(--subClr) ;
     height:300px;
   }
   #day-3
   {  background-color: #47414b3d;
     border: 1px solid ;
     border-radius: 10px;
-    border-color:#ffa500 ;
+    border-color:var(--subClr) ;
     height: 300px;
   }
 #schedule {
@@ -353,7 +353,7 @@ h1, h2, h3, h4, h5, h6 {
   border: none;
   border-radius: 50px;
   font-weight: 600;
-  background-color:#ffa500;
+  background-color:var(--subClr);
   color: black;
   padding: 10px 100px;
 }
@@ -373,7 +373,7 @@ h1, h2, h3, h4, h5, h6 {
 @media (max-width: 480px) {
   #schedule .nav-tabs a {
     padding: 8px 3px;
-    background-color: #ffa500;
+    background-color: var(--subClr);
   }
   #schedule .nav-tabs a.active {
     background-color: whitesmoke;
