@@ -31,65 +31,21 @@ module.exports.amountgenerator = (req, res) => {
       return res.send("EVENTS ERROR : Contact Administrator");
     } else {
       discammount = 100;
-      // discammounts = 200;
+      enteredCCode1 = req.session.regdetails.couponcode1;
+      enteredCCode2 = req.session.regdetails.couponcode2;
+      CAcodes = await getCACodes(enteredCCode1, enteredCCode2);
       CouponCode = [
         { name: "AMAP100", amount: discammount },
-        { name: "ANEN100", amount: discammount },
-        { name: "RKAR100", amount: discammount },
-        { name: "BENM100", amount: discammount },
-        { name: "KAVK100", amount: discammount },
-        { name: "JERJ100", amount: discammount },
-        { name: "BOBB100", amount: discammount },
-        { name: "SUJI100", amount: discammount },
-        { name: "RIYA100", amount: discammount },
-        { name: "SHB100", amount: discammount },
-        { name: "NAD100", amount: discammount },
-        { name: "AIB100", amount: discammount },
-        { name: "SOH100", amount: discammount },
-        { name: "JEJ100", amount: discammount },
-        { name: "NAV100", amount: discammount },
-        { name: "MDU100", amount: discammount },
-        { name: "AAR100", amount: discammount },
-        { name: "SHB100", amount: discammount },
-        { name: "NAD100", amount: discammount },
-        { name: "AIB100", amount: discammount },
-        { name: "SOH100", amount: discammount },
-        { name: "NAV100", amount: discammount },
-        { name: "MDU100", amount: discammount },
-        { name: "AAR100", amount: discammount },
-        { name: "ASP100", amount: discammount },
-        { name: "YAY100", amount: discammount },
-        { name: "PRS100", amount: discammount },
-        { name: "MSK100", amount: discammount },
-        { name: "MAJ100", amount: discammount },
-        { name: "MEA100", amount: discammount },
-        { name: "SAB100", amount: discammount },
-        { name: "GOB100", amount: discammount },
-        { name: "CHR100", amount: discammount },
-        { name: "KUU100", amount: discammount },
-        { name: "BGS100", amount: discammount },
-        { name: "SAH100", amount: discammount },
-        { name: "RUS100", amount: discammount },
-        { name: "ANK100", amount: discammount },
-        { name: "YUA100", amount: discammount },
-        { name: "ATP100", amount: discammount },
-        { name: "SIS100", amount: discammount },
-        { name: "EXEC100", amount: 350 },
-        { name: "Earlybid10", amount: 200 },
-        { name: "ISTE100", amount: discammount },
-        { name: "ANSH100", amount: discammount },
-        { name: "ARAL100", amount: discammount },
-        { name: "TKTU100", amount: discammount },
-        // {name : "SPCK100" ,amount : 500},
-        { name: "EARLYBID10", amount: 200 },
+        { name: "EARLYBIRD", amount: 200 },
       ];
+      CouponCode.push(...CAcodes);
+      console.log(CouponCode);
       event1 = req.session.regdetails.event1;
       event2 = req.session.regdetails.event2;
       event3 = req.session.regdetails.event3;
       IsteReg = req.session.regdetails.ISTEregemail;
       pcbreq = req.session.regdetails.needpcbkit;
-      enteredCCode1 = req.session.regdetails.couponcode1;
-      enteredCCode2 = req.session.regdetails.couponcode2;
+
       console.log(enteredCCode1);
       console.log(enteredCCode2);
       verifiedCCode = [];
@@ -146,11 +102,7 @@ module.exports.amountgenerator = (req, res) => {
       check = true;
       if (enteredCCode1 === "" && enteredCCode2 === "") {
       } else {
-        if (enteredCCode1 === "TKTU100" || enteredCCode2 === "TKTU100") {
-          check = false;
-          registrationamount -= 300;
-          verifiedCCode.push("TKTU100");
-        } else if (
+        if (
           enteredCCode1 === enteredCCode2 ||
           enteredCCode1.toUpperCase() === enteredCCode2.toUpperCase()
         ) {
@@ -413,5 +365,67 @@ function getamountetails(paymentid) {
         console.log(err);
       }
     });
+  });
+}
+
+function getCACodes(enteredCCode1, enteredCCode2) {
+  return new Promise((resolve, reject) => {
+    try {
+      db.query("SELECT * FROM `ca_codes`", async (err, codes) => {
+        if (codes.length === 0) {
+          console.log("No ca codes");
+          resolve(codes);
+        } else {
+          console.log("hey");
+          console.log(enteredCCode2);
+          console.log(enteredCCode1);
+          checkEachCode(codes).then((Cacodes) => {
+            console.log(Cacodes);
+            resolve(Cacodes);
+          });
+        }
+        if (err) {
+          console.log(err);
+          res.send("Error" + err);
+        }
+      });
+    } catch (err) {
+      console.log(err);
+    }
+  });
+}
+
+function checkEachCode(codes) {
+  return new Promise((resolve, reject) => {
+    Cacodes = [];
+    codes.forEach(async (code) => {
+      if (parseInt(code.used) < 2) {
+        if (code.code === enteredCCode1 || code.code === enteredCCode2) {
+          codeUsed = parseInt(code.used) + 1;
+          newCode = { name: code.code, amount: 100 };
+          Cacodes.push(newCode);
+          updateCAUsed(code, codeUsed).then((newCode) => {
+            console.log("updated");
+          });
+        }
+      }
+    });
+    console.log(Cacodes);
+    resolve(Cacodes);
+  });
+}
+function updateCAUsed(code, codeUsed) {
+  return new Promise((resolve, reject) => {
+    db.query(
+      "UPDATE `ca_codes` SET ? where code = ?",
+      [{ used: codeUsed }, code.code],
+      (err, result) => {
+        if (err) {
+          console.log(err);
+        } else {
+          resolve("Success");
+        }
+      }
+    );
   });
 }
