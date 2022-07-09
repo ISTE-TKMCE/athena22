@@ -152,9 +152,12 @@ background-color:#fff;
                   <label for="customCheck1" class="custom-control-label">Remember Me</label>
                 </div>
               </div>
-              <button type="submit" class="btn btn-primary shadow px-5" style="background: linear-gradient(to right, #1FA2FF 0%, #12D8FA  51%, #1FA2FF  100%);color:black;">Log in</button>
-              <a href="/signup" class="btn btn-primary shadow px-5" style="background: linear-gradient(to right, #1FA2FF 0%, #12D8FA  51%, #1FA2FF  100%);color:black;">Register Instead</a>
-            </form>
+              <div class="d-flex justify-content-around">
+                  <button type="submit" class="btn btn-primary shadow px-5" style="background: linear-gradient(to right, #1FA2FF 0%, #12D8FA  51%, #1FA2FF  100%);color:black;">Log in</button>
+              <a href="/signup" class="btn btn-primary shadow px-3" style="background: linear-gradient(to right, #1FA2FF 0%, #12D8FA  51%, #1FA2FF  100%);color:black;">Register Instead</a>
+           
+              </div>
+             </form>
              {{#if message}}
                  <div id="error" >
                      <h6 class="alert alert-danger mt-4">{{message}}</h6>
