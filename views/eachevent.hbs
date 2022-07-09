@@ -4,7 +4,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Description | Athena '21</title>
+        <title>Description | Athena '22</title>
         <meta name="description" content="">
         <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
          <!-- Favicons -->
@@ -51,7 +51,7 @@
       <div id="owl-right"> <img src="/img/1.png" class="img-fluid"alt="owl-right"></div>
        
       <div class="container" data-aos="fade-up">
-        <img class='owl-middle' src="/img/athena.jpeg" alt="owl-middl">
+        <img class='owl-middle' src="/img/athena.jpeg" alt="owl-middle">
       <!-- <div class="title">
         <img class="logo" src="/img/logo.png">
       </div> -->
@@ -76,21 +76,25 @@
               <a class="nav-link" href="#day-2" role="tab" data-bs-toggle="tab">Coordinators</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#day-3" role="tab" data-bs-toggle="tab">Announcements</a>
+              <a class="nav-link" href="#day-3" role="tab" data-bs-toggle="tab">Guidelines</a>
             </li>
            
           </ul>
         </div>
           <div class='nav-mob'>
-            <ul class="nav nav-tabs" role="tablist" data-aos="fade-up" data-aos-delay="100">
+            <ul class="nav nav-tabs " role="tablist" data-aos="fade-up" data-aos-delay="100">
+                <li class="nav-item">
+                <a class="nav-link active btn" href="#day-1" role="tab" data-bs-toggle="tab">Description</a>
+              </li>
+              
               <li class="nav-item">
-                <a class="nav-link active" href="#day-1" role="tab" data-bs-toggle="tab">Description</a>
               
+                <a class="nav-link btn" href="#day-2" role="tab" data-bs-toggle="tab">Coordinators</a>
+              </li>
               
-                <a class="nav-link" href="#day-2" role="tab" data-bs-toggle="tab">Coordinators</a>
+                <li class="nav-item">
               
-              
-                <a class="nav-link" href="#day-3" role="tab" data-bs-toggle="tab">Announcements</a>
+                <a class="nav-link btn " href="#day-3" role="tab" data-bs-toggle="tab">Guidelines</a>
               </li>
              
             </ul>
@@ -113,13 +117,13 @@
             <div role="tabpanel" class="col-lg-9 tab-pane fade show active" id="day-1">
                 <div  id='heading'>
               <center>
-                <div class="abt-pic">
-                      <img class="i" src="/{{this.img_link}}"  alt="abt-image">
+                <div class="abt-pic p-3">
+                      <img class="img-fluid img-responsive  mt-5 mx-auto "style="height:300px;" src="/{{this.img_link}}"  alt="abt-image">
                     </div>
               
-                    <div class="w-75 p-3 abt-txt">
+                    <div class="w-100 p-1 abt-txt">
               
-                    <p class="about">{{this.description}}</p>
+                    <p class="about" style="text-align:justify;">{{this.description}}</p>
                  </div>
               </center>
               </div>
