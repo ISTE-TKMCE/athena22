@@ -84,8 +84,10 @@ module.exports.register = (req,res) =>{
             });
         }
         db.query("SELECT * FROM users where email = ?", [email], async(error, results)=>{
+
+            
     
-            if(results.length === 0){
+            if(!results){
                 return res.status(401).render("login",{
                     message: "Email Or Password Incorrect"
                 });

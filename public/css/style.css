@@ -115,6 +115,7 @@ body {
   height: 100%;
   object-fit: cover;
 }
+
 @keyframes showAth{
   from{
     opacity:1;
@@ -905,7 +906,25 @@ border: 1px solid rgba( 255, 255, 255, 0.18 );
   #navigation {
     z-index: 1;
   }
+
+  #hbox1 #year span {
+    font-size: 30px;
+  }
+
+
  
+  #festname span{
+    font-size:45px;
+    line-height: 85px;
+  }
+  #hbox1 span:first-child,
+#hbox1 span:last-child {
+  font-size: 55px;
+
+}
+
+
+
   .swiper-slide{
     height:300px;
   }
@@ -950,15 +969,7 @@ border: 1px solid rgba( 255, 255, 255, 0.18 );
     width: auto;
   }
 
-  #hbox1 span {
-    color: var(--subClr2);
-    font-size: 70px;
-    /* font-family: "Times New Roman", Times, serif; */
-  }
-  #hbox1 span:first-child,
-  #hbox1 span:last-child {
-    font-size: 85px;
-  }
+
 
   #hbox1 #year span {
     font-size: 30px;
