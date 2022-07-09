@@ -8,7 +8,7 @@ const mg = mailgun({apiKey: process.env.MAILGUN_NAME, domain: process.env.MAILGU
 module.exports.otpmail =(email,otp,name) => {
     return new Promise((resolve, reject)=> {
         let data = {
-            from: 'noreply@sandbox93381424c0944e5285a41206acec6421.mailgun.org',
+            from: 'no-replay@mg.athenatkmce.live',
             to: email,
             subject: 'Confirm OTP | Athena22',
             template: "athena",
@@ -20,6 +20,7 @@ module.exports.otpmail =(email,otp,name) => {
             //   logger.error(error);
             reject(error);
         }else {
+            console.log(body)
             console.log('Mail sent to', email);
             resolve('ES');
         }
@@ -41,7 +42,7 @@ module.exports.workshopmail =(email,eventname) => {
     //console.log(link)
     return new Promise((resolve, reject)=> {
                 let data = {
-                    from: 'admin@athenatkmce.live',
+                    from: 'no-replay@mg.athenatkmce.live',
                     to: email,
                     subject: 'Join Link | Athena22',
                     template: "Post",
