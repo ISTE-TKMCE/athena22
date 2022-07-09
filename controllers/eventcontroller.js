@@ -149,17 +149,12 @@ module.exports.eachevent = (req, res) => {
       if (err) console.log(err);
       else {
         console.log(results);
-        if (req.params.id == 5 || req.params.id == 9) {
-          res.render("eachevent", {
-            events: results,
-            redirecturl: "mailto:events@athenatkmce.live",
-          });
-        } else if (req.params.id > 5) {
+       if (results.categeory == 'event') {
           res.render("eachevent", {
             events: results,
             redirecturl: "/userdashboard/registerevent",
           });
-        } else if (req.params.id <= 4) {
+        } else if (results.categeory == 'workshop') {
           res.render("eachevent", {
             events: results,
             redirecturl: "/userdashboard/registerworkshop",
