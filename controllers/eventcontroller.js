@@ -13,7 +13,7 @@ module.exports.registerevent = (req, res) => {
     event3,
     needpcbkit,
     isISTE,
-    ISTEregemail,
+    ISTEregno,
     couponcode1,
     couponcode2,
   } = req.body;
@@ -31,7 +31,7 @@ module.exports.registerevent = (req, res) => {
       eventName3: event3,
       needpcbkit: needpcbkit,
       isISTE: isISTE,
-      ISTEregno: ISTEregemail,
+      ISTEregno: ISTEregno,
       couponcode1: couponcode1,
       couponcode2: couponcode2,
       phNo: req.session.contact,
@@ -148,13 +148,13 @@ module.exports.eachevent = (req, res) => {
     (err, results) => {
       if (err) console.log(err);
       else {
-        console.log(results);
-       if (results.categeory == 'event') {
+        console.log(results[0].categeory);
+        if (results[0].categeory == 'event') {
           res.render("eachevent", {
             events: results,
             redirecturl: "/userdashboard/registerevent",
           });
-        } else if (results.categeory == 'workshop') {
+        } else if (results[0].categeory == 'workshop') {
           res.render("eachevent", {
             events: results,
             redirecturl: "/userdashboard/registerworkshop",
