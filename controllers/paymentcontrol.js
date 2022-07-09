@@ -86,7 +86,7 @@ module.exports.amountgenerator = (req, res) => {
       event1 = req.session.regdetails.event1;
       event2 = req.session.regdetails.event2;
       event3 = req.session.regdetails.event3;
-      IsteReg = req.session.regdetails.ISTEregno;
+      IsteReg = req.session.regdetails.ISTEregemail;
       pcbreq = req.session.regdetails.needpcbkit;
       enteredCCode1 = req.session.regdetails.couponcode1;
       enteredCCode2 = req.session.regdetails.couponcode2;
@@ -269,7 +269,7 @@ module.exports.paymentaftercontrol = async (req, res) => {
     event3,
     needpcbkit,
     isISTE,
-    ISTEregno,
+    ISTEregemail,
     couponcode1,
     couponcode2,
   } = req.session.regdetails;
@@ -293,7 +293,7 @@ module.exports.paymentaftercontrol = async (req, res) => {
         eventName3: event3,
         needpcbkit: needpcbkit,
         isISTE: isISTE,
-        ISTEregno: ISTEregno,
+        ISTEregno: ISTEregemail,
         orderid: orderid,
         paymentid: paymentid,
         isPaid: "1",
@@ -327,7 +327,7 @@ module.exports.paymentaftercontrol = async (req, res) => {
         eventName3: event3,
         needpcbkit: needpcbkit,
         isISTE: isISTE,
-        ISTEregno: ISTEregno,
+        ISTEregno: ISTEregemail,
         orderid: orderid,
         paymentid: paymentid,
         isPaid: "1",
@@ -366,7 +366,7 @@ function creatediscount(IsteReg, registrationamount) {
   return new Promise((resolve, reject) => {
     try {
       db.query(
-        "SELECT * FROM `iste_member` WHERE id = ?",
+        "SELECT * FROM `iste_member` WHERE email = ?",
         [IsteReg],
         async (err, results) => {
           if (results.length === 0) {
