@@ -46,17 +46,22 @@ module.exports.loadevents = (req, res) => {
                   orgdet = event.organizer_contact;
                   btn1name = "PAID";
                   btn1red = "";
+                  btn2name = "";
                   btn2red = "";
                   display = "none";
-                  if (event.name == "UNRAVEL THE MYSTERY") {
-                    btn1name = "PLAY NOW";
-                    btn2name = "SUBMIT ANSWER";
-                    btn1red =
-                      "window.location.href='https://crime.athena.live'";
-                    btn2red = "/userdashboard/unravel/form";
-                    display = "block";
-                  }
-                  //registeredeventdets.push({eventname,eventdate,eventdesc,eventorg,orgdet,isPaid,btn1name,btn2name,btn1red,btn2red,display});
+                  registeredeventdets.push({
+                    eventname,
+                    eventdate,
+                    eventdesc,
+                    eventorg,
+                    orgdet,
+                    isPaid,
+                    btn1name,
+                    btn2name,
+                    btn1red,
+                    btn2red,
+                    display,
+                  });
                 }
               });
               console.log("registeredeventdets");

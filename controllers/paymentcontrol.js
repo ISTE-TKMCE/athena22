@@ -34,10 +34,7 @@ module.exports.amountgenerator = (req, res) => {
       enteredCCode1 = req.session.regdetails.couponcode1;
       enteredCCode2 = req.session.regdetails.couponcode2;
       CAcodes = await getCACodes(enteredCCode1, enteredCCode2);
-      CouponCode = [
-        { name: "AMAP100", amount: discammount },
-        { name: "EARLYBIRD", amount: 200 },
-      ];
+      CouponCode = [{ name: "EARLYBIRD", amount: 200 }];
       CouponCode.push(...CAcodes);
       console.log(CouponCode);
       event1 = req.session.regdetails.event1;
@@ -262,8 +259,18 @@ module.exports.paymentaftercontrol = async (req, res) => {
         if (error) {
           console.log(error);
         } else {
-          //console.log(reusult);
-          // console.log("successs");
+          console.log("hey");
+          console.log(couponcode1.split("_"));
+          if (couponcode1 && couponcode1.split("_")[0] == "CA") {
+            updateCAUsed(couponcode1).then((newCode) => {
+              console.log("updated");
+            });
+          }
+          if (couponcode2 && couponcode2.split("_")[0] == "CA") {
+            updateCAUsed(couponcode2).then((newCode) => {
+              console.log("updated");
+            });
+          }
         }
       }
     );
@@ -404,9 +411,6 @@ function checkEachCode(codes) {
           codeUsed = parseInt(code.used) + 1;
           newCode = { name: code.code, amount: 100 };
           Cacodes.push(newCode);
-          updateCAUsed(code, codeUsed).then((newCode) => {
-            console.log("updated");
-          });
         }
       }
     });
@@ -414,11 +418,11 @@ function checkEachCode(codes) {
     resolve(Cacodes);
   });
 }
-function updateCAUsed(code, codeUsed) {
+function updateCAUsed(code) {
   return new Promise((resolve, reject) => {
     db.query(
-      "UPDATE `ca_codes` SET ? where code = ?",
-      [{ used: codeUsed }, code.code],
+      "UPDATE `ca_codes` SET used = used + 1 where code = ?",
+      [code],
       (err, result) => {
         if (err) {
           console.log(err);
