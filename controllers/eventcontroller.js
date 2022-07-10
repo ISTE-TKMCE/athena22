@@ -145,6 +145,7 @@ module.exports.eachevent = (req, res) => {
   switch(req.params.id){
     case "aws": id = 1 ; break;
     case "hire-n-fire": id = 6 ; break;
+    case "unity": id = 2 ; break;
     default : id = req.params.id;
   }
   // if (req.params.id === "aws") {

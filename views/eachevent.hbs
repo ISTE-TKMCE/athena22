@@ -208,7 +208,7 @@
           </div>
         </section>
 
-        <button onclick="window.location.href='{{../redirecturl}}'"  style="border-radius: 50px; width: 200px;" type="button" class="btn">Register</button>
+        <button id="b{{this.id}}" onclick="window.location.href='{{../redirecturl}}'"  style="border-radius: 50px; width: 200px;" type="button" class="btn rebun">Register</button>
         {{/each}}
         </div>
         <section class='curved'>
@@ -280,6 +280,24 @@
 
   <!-- Template Main JS File -->
   <script src="/js/main.js"></script>
+
+  <script>
+
+    const  classesNodeList = document.querySelectorAll(".rebun");
+
+    for( i of classesNodeList){
+      console.log(i);
+      switch(i.id){
+        case "b9": i.onclick  = ()=> window.location.replace("https://pages.razorpay.com/plagiarism_athena22");break;
+        case "b10": i.onclick  = ()=> window.location.replace("https://pages.razorpay.com/sustain_athena22");break;
+        case "b8": i.onclick  = ()=> window.location.replace("https://pages.razorpay.com/objection-milord_athena22");break;
+        case "b5": i.onclick  = ()=> window.location.replace("https://pages.razorpay.com/circuit-it-out_athena22");break;
+
+      }
+    }
+
+  </script>
+
     </body>
     <!-- Vendor JS Files -->
   
