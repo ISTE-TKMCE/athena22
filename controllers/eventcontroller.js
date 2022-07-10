@@ -141,10 +141,14 @@ module.exports.getevents = (req, res) => {
 
 // EACH EVENT PAGE RENDERING
 module.exports.eachevent = (req, res) => {
-  console.log(req.params.id);
+  if (req.params.id === "aws") {
+    id = 1;
+  } else {
+    id = req.params.id;
+  }
   db.query(
     "SELECT * FROM events WHERE id = ?",
-    [req.params.id],
+    [id],
     (err, results) => {
       if (err) console.log(err);
       else {

@@ -292,7 +292,7 @@ function creatediscount(IsteReg, registrationamount) {
             console.log(registrationamount);
             resolve(registrationamount);
           } else {
-            registrationamount -= 200;
+            registrationamount -= 100;
 
             verifiedCCode.push("ISTE-MEMBER");
             resolve(registrationamount);
