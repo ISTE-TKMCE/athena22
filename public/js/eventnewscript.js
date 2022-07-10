@@ -9,10 +9,10 @@
 
 console.log(allEventlist);
 
-var specialEventIndex = 5;
+var specialEventIndex = 31;
 //var specialEventIndex = 2;
-var onlyregEventIndex = 4;
-var regonlyEventIndex = 8;
+var onlyregEventIndex = 31;
+var regonlyEventIndex = 32;
 //var onlyregEventIndex = 1;
 
 ////////////////////////////////////////////////////////
