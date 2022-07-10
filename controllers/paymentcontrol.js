@@ -52,6 +52,7 @@ module.exports.amountgenerator = (req, res) => {
           eventmoney = event.eventamount;
           razorpayfee2 = 0.02 * event.eventamount;
           registrationamount += razorpayfee2;
+          registrationamount += event.eventamount;
           registeredevents.push({ eventname, eventmoney });
         }
         if (event.name == event3) {
@@ -59,6 +60,7 @@ module.exports.amountgenerator = (req, res) => {
           eventmoney = event.eventamount;
           razorpayfee3 = 0.02 * event.eventamount;
           registrationamount += razorpayfee3;
+          registrationamount += event.eventamount;
           registeredevents.push({ eventname, eventmoney });
         }
       });
