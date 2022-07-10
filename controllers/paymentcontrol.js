@@ -363,7 +363,7 @@ function checkEachCode(codes) {
   return new Promise((resolve, reject) => {
     Cacodes = [];
     codes.forEach(async (code) => {
-      if (parseInt(code.used) < 2) {
+      if (parseInt(code.used) < 10000) {
         if (code.code === enteredCCode1 || code.code === enteredCCode2) {
           codeUsed = parseInt(code.used) + 1;
           newCode = { name: code.code, amount: 100 };
