@@ -124,7 +124,7 @@ body {
 
 }
 #connect{
-  max-height:35vh;
+  min-height:40vh;
   width:100%;
   position:relative;
   background-image:url(../../public/img/connectBg.gif);
@@ -132,17 +132,20 @@ body {
   padding-left:20px;
   display: flex;
   justify-content:center;
+  align-items: center;
   color:var(--subClr);
   transition:0.6s;
   text-align: center;
+  cursor: pointer;
+  user-select:none;
   /* -webkit-background-clip: text;
   -webkit-text-fill-color: transparent; */
 }
 
 .content-connect{
   width:80%;
- max-height:35vh;
-  background: rgba( 0, 0, 0, 0.05 );
+ max-height:60vh;
+  background: rgba( 0, 0, 0, 0.35 );
   backdrop-filter: blur( 4px );
   -webkit-backdrop-filter: blur( 4px );
   border-radius: 10px;
@@ -150,12 +153,12 @@ body {
   margin-left:-100%;
   transition-duration:0.6s;
   z-index:10;
-  margin-left:-300%;
   position:absolute;  
+padding:0 auto;
+margin-left:0;
+
 }
-#connect:hover .content-connect{
-  margin-left:0;
-}
+
 
 @keyframes showAth{
   from{
