@@ -148,13 +148,13 @@ module.exports.eachevent = (req, res) => {
     (err, results) => {
       if (err) console.log(err);
       else {
-        console.log(results[0].categeory);
+        console.log(results[0].id > 4 );
         if (results[0].categeory == 'event') {
           res.render("eachevent", {
             events: results,
             redirecturl: "/userdashboard/registerevent",
           });
-        } else if (results[0].categeory == 'workshop') {
+        } else {
           res.render("eachevent", {
             events: results,
             redirecturl: "/userdashboard/registerworkshop",
