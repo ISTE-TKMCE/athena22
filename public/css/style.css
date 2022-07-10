@@ -976,7 +976,7 @@ border: 1px solid rgba( 255, 255, 255, 0.18 );
   #events {
 
     /* margin-bottom: 100px; */
-    height:100vh;
+    max-height:400px;
   }
 
 
@@ -1035,6 +1035,8 @@ border: 1px solid rgba( 255, 255, 255, 0.18 );
 
   #events {
     margin-top: 100px;
+    max-height:400px;
+margin-bottom:5vh;
   }
 
   
