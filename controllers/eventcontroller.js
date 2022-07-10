@@ -141,11 +141,17 @@ module.exports.getevents = (req, res) => {
 
 // EACH EVENT PAGE RENDERING
 module.exports.eachevent = (req, res) => {
-  if (req.params.id === "aws") {
-    id = 1;
-  } else {
-    id = req.params.id;
+
+  switch(req.params.id){
+    case "aws": id = 1 ; break;
+    case "hire-n-fire": id = 6 ; break;
+    default : id = req.params.id;
   }
+  // if (req.params.id === "aws") {
+  //   id = 1;
+  // } else {
+  //   id = req.params.id;
+  // }
   db.query(
     "SELECT * FROM events WHERE id = ?",
     [id],
