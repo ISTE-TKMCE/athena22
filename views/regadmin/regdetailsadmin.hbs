@@ -190,23 +190,22 @@
 
                             
 
-                            <table id="regTable">
-  <tr>
-    <th>Event</th>
-    <th>workshop</th>
-    <th>Country</th>
-  </tr>
-  <tr>
-    <td>Alfreds Futterkiste</td>
-    <td>Maria Anders</td>
-    <td>Germany</td>
-  </tr>
-  <tr>
-    <td>Centro comercial Moctezuma</td>
-    <td>Francisco Chang</td>
-    <td>Mexico</td>
-  </tr>
-</table>
+                            <table id="regTable" class="d-none">
+                            <tr>
+                                <th>Programme</th>
+                                <th>name</th>
+                                <th>ph.no</th>
+                                <th>is paid</th>
+                            </tr>
+                            {{#each paidregistrations}}
+                            <tr>
+                                <td>{{this.eventName1}}</td>
+                                <td>{{this.name}}</td>
+                                <td>{{this.phNo}}</td>
+                                <td>{{../btntext}}</td>
+                            </tr>
+                            {{/each}}
+                            </table>
 
 
                 </section>
