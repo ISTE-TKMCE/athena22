@@ -115,7 +115,7 @@ module.exports.getevents = (req, res) => {
       for (i = 3; i < 4; i++) {
         eventc2.push(results[i]);
       }
-      for (i = 4; i < 11; i++) {             // ljflafjl
+      for (i = 4; i < 12; i++) {             // ljflafjl
         eventc3.push(results[i]);
       }
       for (i = 7; i < 10; i++) {
@@ -147,6 +147,7 @@ module.exports.eachevent = (req, res) => {
     case "impromptu": id = 6 ; break;
     case "unity": id = 2 ; break;
     case "athena-heist": id = 11 ; break;
+    case "you-re-hired": id = 12 ; break;
     default : id = req.params.id;
   }
   // if (req.params.id === "aws") {
