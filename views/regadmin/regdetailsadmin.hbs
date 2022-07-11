@@ -142,10 +142,10 @@
 
                                             <h1 id="reghd" style="text-align: center; border-bottom: 2px solid #ef9b00;padding-bottom: 10px; ">{{head}}</h1>
                                             <div class="filter" style="display: flex;flex-direction: column;">
-                                            <label>Filter by workshop</label>
+                                            <label>Filter by event</label>
                                             <button onclick="filter()" style="padding: 0px;margin-left: 6px;border-radius: 9px;" ><select id="filter"  style="border:2px solid #ef9b00; border-radius: 5px;">
                                                 <option value="">Show All Registrations</option>
-                                                <option value="CATIA WORKSHOP">CATIA WORKSHOP</option>
+                                                {{!-- <option value="CATIA WORKSHOP">CATIA WORKSHOP</option>
                                                 <option value="APP DEVELOPMENT WORKSHOP">APP DEVELOPMENT WORKSHOP</option>
                                                 <option value="STAAD PRO WORKSHOP">STAAD PRO WORKSHOP</option>
                                                 <option value="ELECTRONICS CIRCUIT,PCB DESIGINING WORKSHOP">ELECTRONICS CIRCUIT</option>
@@ -155,8 +155,9 @@
                                                 <option value="CODE OVERFLOW">CODE OVERFLOW</option>
                                                 <option value="INGENIUM-DEBATE">INGENIUM</option>
                                                 <option value="UNRAVEL THE MYSTERY">UNRAVEL THE MYSTERY</option>
-                                                <option value="TRADE O' MANIA">TRADE O' MANIA</option>
+                                                <option value="TRADE O' MANIA">TRADE O' MANIA</option> --}}
                                             </select></button>
+                                            <button onclick="exportExel()"> Download</button>
                                             </div>
                                                 {{#each paidregistrations}}
                                                     
@@ -186,6 +187,27 @@
                                     </div>
                                 </div>
                             </div>
+
+                            
+
+                            <table id="regTable">
+  <tr>
+    <th>Event</th>
+    <th>workshop</th>
+    <th>Country</th>
+  </tr>
+  <tr>
+    <td>Alfreds Futterkiste</td>
+    <td>Maria Anders</td>
+    <td>Germany</td>
+  </tr>
+  <tr>
+    <td>Centro comercial Moctezuma</td>
+    <td>Francisco Chang</td>
+    <td>Mexico</td>
+  </tr>
+</table>
+
 
                 </section>
 
@@ -364,6 +386,45 @@
 
             })
         }
+    </script>
+
+
+
+    <script>
+
+        function exportExel()
+{
+    var tab_text="<table border='1px'><tr bgcolor='#87AFC6'>";
+    var textRange; var j=0;
+    tab = document.getElementById('regTable'); // id of table
+
+    for(j = 0 ; j < tab.rows.length ; j++) 
+    {     
+        tab_text=tab_text+tab.rows[j].innerHTML+"</tr>";
+        //tab_text=tab_text+"</tr>";
+    }
+
+    tab_text=tab_text+"</table>";
+    tab_text= tab_text.replace(/<A[^>]*>|<\/A>/g, "");//remove if u want links in your table
+    tab_text= tab_text.replace(/<img[^>]*>/gi,""); // remove if u want images in your table
+    tab_text= tab_text.replace(/<input[^>]*>|<\/input>/gi, ""); // reomves input params
+
+    var ua = window.navigator.userAgent;
+    var msie = ua.indexOf("MSIE "); 
+
+    if (msie > 0 || !!navigator.userAgent.match(/Trident.*rv\:11\./))      // If Internet Explorer
+    {
+        txtArea1.document.open("txt/html","replace");
+        txtArea1.document.write(tab_text);
+        txtArea1.document.close();
+        txtArea1.focus(); 
+        sa=txtArea1.document.execCommand("SaveAs",true,"Say Thanks to Sumit.xls");
+    }  
+    else                 //other browser not tested on IE 11
+        sa = window.open('data:application/vnd.ms-excel,' + encodeURIComponent(tab_text));  
+
+    return (sa);
+}
     </script>
 </body>
 </html>

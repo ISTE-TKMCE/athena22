@@ -8,7 +8,7 @@ const redirect = require('../controllers/redirect');
 
 
 router.get('/',redirect.RedirectadminLogin, adminauthcntrl.adminroute);
-router.get('/registrations',redirect.RedirectadminLogin, adminauthcntrl.getfinregistrations);
+router.get('/registrations',redirect.RedirectadminLogin, adminauthcntrl.getregistrations);
 router.get('/paidregistrations',redirect.RedirectadminLogin, adminauthcntrl.getregistrations);
 router.get('/unpaidregistrations',redirect.RedirectadminLogin, adminauthcntrl.getallregistrations);
 router.get('/eventregistrations',redirect.RedirectadminLogin, adminauthcntrl.getorgregistrations);
