@@ -305,22 +305,21 @@ function creatediscount(IsteReg, registrationamount, registeredevents) {
             resolve(registrationamount);
           }
           if (registeredevents[0].eventcategory === "event") {
-            if (
-              registeredevents[0]?.eventname == "You're Hired!" ||
-              registeredevents[1]?.eventname == "You're Hired!" ||
-              registeredevents[2]?.eventname == "You're Hired!"
-            ) {
-              registrationamount -= 50;
-              verifiedCCode.push("ISTE-MEMBER");
-            }
-            if (
-              registeredevents[0]?.eventname == "Extrude" ||
-              registeredevents[1]?.eventname == "Extrude" ||
-              registeredevents[2]?.eventname == "Extrude"
-            ) {
-              registrationamount -= 50;
-              verifiedCCode.push("ISTE-MEMBER");
-            }
+            registeredevents.forEach((event)=> {
+              if (
+                event.eventname == "You're Hired!"
+              ) {
+                registrationamount -= 50;
+                verifiedCCode.push("ISTE-MEMBER");
+              }
+              if (
+                event.eventname == "Extrude" 
+              ) {
+                registrationamount -= 50;
+                verifiedCCode.push("ISTE-MEMBER");
+              }
+            })
+   
             resolve(registrationamount);
           } else {
             registrationamount -= 100;
