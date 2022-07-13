@@ -42,26 +42,29 @@ module.exports.amountgenerator = (req, res) => {
         if (event.name == event1) {
           eventname = event.name;
           eventmoney = event.eventamount;
+          eventcategory = event.categeory;
           razorpayfee1 = 0.02 * event.eventamount;
           registrationamount += razorpayfee1;
           registrationamount += event.eventamount;
-          registeredevents.push({ eventname, eventmoney });
+          registeredevents.push({ eventname, eventmoney, eventcategory });
         }
         if (event.name == event2) {
           eventname = event.name;
           eventmoney = event.eventamount;
+          eventcategory = event.categeory;
           razorpayfee2 = 0.02 * event.eventamount;
           registrationamount += razorpayfee2;
           registrationamount += event.eventamount;
-          registeredevents.push({ eventname, eventmoney });
+          registeredevents.push({ eventname, eventmoney, eventcategory });
         }
         if (event.name == event3) {
           eventname = event.name;
           eventmoney = event.eventamount;
+          eventcategory = event.categeory;
           razorpayfee3 = 0.02 * event.eventamount;
           registrationamount += razorpayfee3;
           registrationamount += event.eventamount;
-          registeredevents.push({ eventname, eventmoney });
+          registeredevents.push({ eventname, eventmoney, eventcategory });
         }
       });
 
@@ -93,7 +96,11 @@ module.exports.amountgenerator = (req, res) => {
       }
       ///Check for ISTE Reg Number Validity
       if (IsteReg != "" && check) {
-        registrationamount = await istediscount(IsteReg, registrationamount);
+        registrationamount = await istediscount(
+          IsteReg,
+          registrationamount,
+          registeredevents
+        );
       }
 
       //////********************** */
@@ -279,24 +286,46 @@ module.exports.paymentaftercontrol = async (req, res) => {
 /*******ISTE DECREAMENT */
 
 async function istediscount() {
+  console.log(registeredevents);
+  console.log("hey");
   // return the response
-  return await creatediscount(IsteReg, registrationamount);
+  return await creatediscount(IsteReg, registrationamount, registeredevents);
 }
 
-function creatediscount(IsteReg, registrationamount) {
+function creatediscount(IsteReg, registrationamount, registeredevents) {
   return new Promise((resolve, reject) => {
     try {
       db.query(
         "SELECT * FROM `iste_member` WHERE email = ?",
         [IsteReg],
         async (err, results) => {
+          console.log(registeredevents);
           if (results.length === 0) {
             console.log(registrationamount);
             resolve(registrationamount);
+          }
+          if (registeredevents[0].eventcategory === "event") {
+            if (
+              registeredevents[0]?.eventname == "You're Hired!" ||
+              registeredevents[1]?.eventname == "You're Hired!" ||
+              registeredevents[2]?.eventname == "You're Hired!"
+            ) {
+              registrationamount -= 50;
+              verifiedCCode.push("ISTE-MEMBER");
+            }
+            if (
+              registeredevents[0]?.eventname == "Extrude" ||
+              registeredevents[1]?.eventname == "Extrude" ||
+              registeredevents[2]?.eventname == "Extrude"
+            ) {
+              registrationamount -= 50;
+              verifiedCCode.push("ISTE-MEMBER");
+            }
+            resolve(registrationamount);
           } else {
             registrationamount -= 100;
-
             verifiedCCode.push("ISTE-MEMBER");
+
             resolve(registrationamount);
           }
           if (err) {

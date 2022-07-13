@@ -48,6 +48,7 @@ var isteCheck = (checkbox) => {
     coupon.style.display = "none";
   } else {
     isteNo.style.display = "none";
+    isteNo.value = "";
     coupon.style.display = "block";
   }
 };
