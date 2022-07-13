@@ -149,6 +149,7 @@ module.exports.eachevent = (req, res) => {
     case "athena-heist": id = 11 ; break;
     case "you-re-hired": id = 12 ; break;
     case "primavera": id = 3 ; break;
+    case "ctrl-c": id = 13 ; break;
     default : id = req.params.id;
   }
   // if (req.params.id === "aws") {
