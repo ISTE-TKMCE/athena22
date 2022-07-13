@@ -150,6 +150,7 @@ module.exports.eachevent = (req, res) => {
     case "you-re-hired": id = 12 ; break;
     case "primavera": id = 3 ; break;
     case "ctrl-c": id = 13 ; break;
+    case "extrude": id = 7 ; break;
     default : id = req.params.id;
   }
   // if (req.params.id === "aws") {
