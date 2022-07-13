@@ -115,7 +115,7 @@ module.exports.getevents = (req, res) => {
       for (i = 3; i < 4; i++) {
         eventc2.push(results[i]);
       }
-      for (i = 4; i < 12; i++) {             // ljflafjl
+      for (i = 4; i < 13; i++) {             // ljflafjl
         eventc3.push(results[i]);
       }
       for (i = 7; i < 10; i++) {
