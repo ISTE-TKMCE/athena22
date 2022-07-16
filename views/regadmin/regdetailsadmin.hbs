@@ -143,21 +143,19 @@
                                             <h1 id="reghd" style="text-align: center; border-bottom: 2px solid #ef9b00;padding-bottom: 10px; ">{{head}}</h1>
                                             <div class="filter" style="display: flex;flex-direction: column;">
                                             <label>Filter by event</label>
-                                            <button onclick="filter()" style="padding: 0px;margin-left: 6px;border-radius: 9px;" ><select id="filter"  style="border:2px solid #ef9b00; border-radius: 5px;">
+                                            <button onclick="filter()" style="padding: 0px;margin-left: 6px;border-radius: 9px;" >
+                                                <select id="filter"  style="border:2px solid #ef9b00; border-radius: 5px;">
                                                 <option value="">Show All Registrations</option>
-                                                {{!-- <option value="CATIA WORKSHOP">CATIA WORKSHOP</option>
-                                                <option value="APP DEVELOPMENT WORKSHOP">APP DEVELOPMENT WORKSHOP</option>
-                                                <option value="STAAD PRO WORKSHOP">STAAD PRO WORKSHOP</option>
-                                                <option value="ELECTRONICS CIRCUIT,PCB DESIGINING WORKSHOP">ELECTRONICS CIRCUIT</option>
-                                                <option value="IDEATHON">IDEATHON</option>
-                                                <option value="ON THE GRID">ON THE GRID</option>
-                                                <option value="CIRCUITRON">CIRCUITRON</option>
-                                                <option value="CODE OVERFLOW">CODE OVERFLOW</option>
-                                                <option value="INGENIUM-DEBATE">INGENIUM</option>
-                                                <option value="UNRAVEL THE MYSTERY">UNRAVEL THE MYSTERY</option>
-                                                <option value="TRADE O' MANIA">TRADE O' MANIA</option> --}}
+                                                <option value="AWS DevOps">AWS DevOps</option>
+                                                <option value="Game Development using Unity">Game Development using Unity</option>
+                                                <option value="IMPROMPTU PVT LTD">IMPROMPTU PVT LTD</option>
+                                                <option value="You're Hired!">You're Hired!</option>
+                                                <option value="Primavera">Primavera</option>
+                                                <option value="Extrude">Extrude</option>
+                                                <option value="Athena heist">Athena heist</option>
                                             </select></button>
-                                            <button onclick="exportExel()"> Download</button>
+                                            <button onclick="exportExel()" class="btn btn-success mt-2"> Download</button>
+                                            <p>Participants are sorted in Ascending order on their names </p>
                                             </div>
                                                 {{#each paidregistrations}}
                                                     
